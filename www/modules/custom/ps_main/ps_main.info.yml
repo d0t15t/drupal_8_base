@@ -1,0 +1,5 @@
+name: 'ps_main'
+type: module
+description: 'Main functions for PS120.'
+core: 8.x
+package: 'Custom'

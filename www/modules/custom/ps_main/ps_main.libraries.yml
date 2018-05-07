@@ -1,0 +1,10 @@
+ps-main:
+  version: 1.x
+  css:
+    layout:
+      css/ps-main-forms.css: {}
+  js:
+    js/ps-main-forms.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

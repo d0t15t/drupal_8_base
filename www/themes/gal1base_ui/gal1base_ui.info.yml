@@ -1,0 +1,14 @@
+name: gal1base_ui
+type: theme
+description: 'Gallery 1 ui theme'
+package: ibt
+core: 8.x
+libraries:
+  - gal1base_ui/global-styling
+ 
+base theme: base_ui
+
+regions:
+  content: Content
+  header: Header
+  footer: Footer

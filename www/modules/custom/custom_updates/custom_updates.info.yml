@@ -1,0 +1,5 @@
+name: 'custom_updates'
+type: module
+description: 'Use hook_update_N(&$sandbox) to perform updates.'
+core: 8.x
+package: 'Custom'

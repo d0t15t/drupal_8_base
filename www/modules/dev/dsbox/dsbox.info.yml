@@ -1,0 +1,18 @@
+name: Drupal Swipebox
+type: module
+description: Uses the Swipebox lightbox to provide formatters for the core image and link fields.
+
+package: Other
+# version: VERSION
+# core: 8.x
+dependencies:
+  - libraries
+  - image
+  - link
+hidden: false
+
+# Information added by Drupal.org packaging script on 2014-12-20
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'dsbox'
+datestamp: 1419077284

@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * Enable 'required' contrib modules.
+ */
+function custom_updates_update_8201(&$sandbox) {
+  $modules = [
+    'admin_toolbar',
+    'admin_toolbar_tools',
+    'block_class',
+    'paragraphs',
+    'rabbit_hole',
+    'messageclose',
+    'field_formatter_range',
+    'token',
+    'chosen',
+    'chosen_field',
+    'chosen_lib',
+    'kint',
+    'inline_form_errors',
+    'responsive_image',
+    'statistics',
+    'syslog',
+    'admin_toolbar_links_access_filter',
+    'datetime_range',
+    'telephone',
+    'rh_node',
+    'rh_taxonomy',
+    'backup_migrate',
+    'taxonomy_menu',
+    'nice_menus',
+    // 'menu_force',
+    'permissions_filter',
+    'allowed_formats',
+    'libraries',
+    'linked_field',
+    'contact_block',
+    'redirect',
+  ];
+  \Drupal::service('module_installer')->install($modules);
+}
+
+/**
+ * Disable modules.
+ */
+function custom_updates_update_8202(&$sandbox) {
+  $modules = [
+    'comment',
+    'tour',
+  ];
+  \Drupal::service('module_installer')->uninstall($modules);
+}
+

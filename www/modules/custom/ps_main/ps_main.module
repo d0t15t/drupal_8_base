@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Contains ps_main.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ps_main_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ps_main module.
+    case 'help.page.ps_main':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Main functions for PS120.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ps_main_theme() {
+  return [
+    'ps_main' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+function ps_main_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset ($form['menu'])) {
+    // Menu options always open.
+    $form['menu']['#open'] = true;
+    // For specific CT, default to checked for the menu item radio,
+    // but only for new nodes - not existing ones.
+    $types = _ps_main_menu_force_content_types();
+    foreach($types as $string) {
+      $node = Drupal::request()->attributes->get('node');
+      $test = strpos($form_id, $string);
+      if ($test !== false && $node == null) {
+        $form['menu']['enabled']['#default_value'] = 1;
+      }
+    }
+    // Add js library.
+    $form['#attached']['library'][] = 'ps_main/ps-main';
+  }
+}
+
+/**
+ * CTs which should automatically be checked for menu item selection when creating a node
+ */
+function _ps_main_menu_force_content_types() {
+  return [
+    'artist',
+    'exhibition',
+  ];
+}
