@@ -1,0 +1,9 @@
+uuid: 220407d2-4a90-473d-8143-5107ae45463e
+langcode: en
+status: true
+dependencies: {  }
+id: text
+label: Text
+icon_uuid: null
+description: 'A block of text input with the WYSIWYG editor.'
+behavior_plugins: {  }

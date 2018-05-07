@@ -1,0 +1,18 @@
+uuid: bb46a274-eab4-4fb2-8b02-6a822c2ad186
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:menu_link_content:52e4d14b-ba77-433f-9fef-3f99ecdc3117'
+name: Artist
+type: artist
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

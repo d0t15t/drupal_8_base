@@ -1,0 +1,136 @@
+uuid: 68ed3d9c-cdec-41f9-a474-615447928daa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.artist.field_content
+    - field.field.node.artist.field_cv
+    - field.field.node.artist.field_editions
+    - field.field.node.artist.field_exhibitions
+    - field.field.node.artist.field_paragraphs
+    - node.type.artist
+  module:
+    - entity_reference_revisions
+    - field_group
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_images
+        - group_editions
+        - group_exhibitions
+        - group_cv
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        label: Tabs
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: Tabs
+      region: content
+    group_images:
+      children:
+        - field_paragraphs
+        - field_images
+      parent_name: group_tabs
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+      label: Images
+      region: content
+    group_editions:
+      children:
+        - field_editions
+      parent_name: group_tabs
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: Editions
+      region: content
+    group_exhibitions:
+      children:
+        - field_exhibitions
+      parent_name: group_tabs
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: Exhibitions
+      region: content
+    group_cv:
+      children:
+        - field_cv
+      parent_name: group_tabs
+      weight: 23
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+      label: CV
+      region: content
+id: node.artist.default
+targetEntityType: node
+bundle: artist
+mode: default
+content:
+  field_content:
+    weight: 25
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cv:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_editions:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_exhibitions:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 24
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

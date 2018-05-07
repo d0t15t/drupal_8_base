@@ -1,0 +1,29 @@
+uuid: 5e5b0ef2-e52a-4f9b-be31-75906a3e7b7e
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - nice_menus
+  theme:
+    - base_ui
+third_party_settings:
+  block_class:
+    classes: ''
+id: nicemenus
+theme: base_ui
+region: header
+weight: 0
+provider: null
+plugin: nice_menus_block
+settings:
+  id: nice_menus_block
+  label: ''
+  provider: nice_menus
+  label_display: visible
+  nice_menus_name: ''
+  nice_menus_menu: 'main:'
+  nice_menus_depth: '-1'
+  nice_menus_type: down
+  nice_menus_respect_expand: '0'
+visibility: {  }

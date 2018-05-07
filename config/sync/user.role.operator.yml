@@ -1,0 +1,24 @@
+uuid: 660f242d-d9f8-4b91-9adf-dae67ce86434
+langcode: en
+status: true
+dependencies: {  }
+id: operator
+label: Operator
+weight: -8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access in-place editing'
+  - 'access toolbar'
+  - 'administer menu'
+  - 'change own username'
+  - 'create artist content'
+  - 'create exhibition content'
+  - 'create page content'
+  - 'delete any artist content'
+  - 'delete any exhibition content'
+  - 'delete any page content'
+  - 'edit any artist content'
+  - 'edit any exhibition content'
+  - 'edit any page content'
+  - 'view the administration theme'

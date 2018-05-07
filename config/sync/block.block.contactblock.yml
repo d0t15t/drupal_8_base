@@ -1,0 +1,33 @@
+uuid: 04b2ec11-259e-4422-a3e3-bdcc23713c5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - contact.form.feedback
+  module:
+    - block_class
+    - contact_block
+    - system
+  theme:
+    - gal1base_ui
+third_party_settings:
+  block_class:
+    classes: ''
+id: contactblock
+theme: gal1base_ui
+region: content
+weight: 0
+provider: null
+plugin: contact_block
+settings:
+  id: contact_block
+  label: 'Contact block'
+  provider: contact_block
+  label_display: '0'
+  contact_form: feedback
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/4
+    negate: false
+    context_mapping: {  }

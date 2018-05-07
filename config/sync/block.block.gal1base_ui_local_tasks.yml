@@ -1,0 +1,22 @@
+uuid: e0fc7703-644b-491f-98b1-5ed9b5a1fc67
+langcode: en
+status: true
+dependencies:
+  theme:
+    - gal1base_ui
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: gal1base_ui_local_tasks
+theme: gal1base_ui
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

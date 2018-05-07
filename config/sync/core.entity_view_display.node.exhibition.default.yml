@@ -1,0 +1,45 @@
+uuid: b51c9470-f788-47d2-bffb-1526fefefbee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.exhibition.body
+    - field.field.node.exhibition.field_content
+    - field.field.node.exhibition.field_image_main
+    - field.field.node.exhibition.field_paragraphs
+    - field.field.node.exhibition.field_teaser
+    - node.type.exhibition
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.exhibition.default
+targetEntityType: node
+bundle: exhibition
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_paragraphs:
+    weight: 1
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_content: true
+  field_image_main: true
+  field_teaser: true

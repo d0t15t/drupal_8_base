@@ -1,0 +1,30 @@
+uuid: cc048b3b-b67a-4f53-8d21-7a7d0e97a63c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - node.type.artist
+    - node.type.exhibition
+    - paragraphs.paragraphs_type.item_reference
+id: paragraph.item_reference.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: item_reference
+label: Content
+description: 'Select the content to be displayed as teaser, and linked to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      artist: artist
+      exhibition: exhibition
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: artist
+field_type: entity_reference

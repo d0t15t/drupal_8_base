@@ -1,0 +1,22 @@
+uuid: 5c363f25-cde6-403c-9429-f0ffdfe70f8e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gal1base_ui
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: gal1base_ui_content
+theme: gal1base_ui
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

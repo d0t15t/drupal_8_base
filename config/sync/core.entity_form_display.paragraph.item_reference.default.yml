@@ -1,0 +1,47 @@
+uuid: 51b4f38e-0924-4e13-aeb9-10d555fe112b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.item_reference.field_caption
+    - field.field.paragraph.item_reference.field_content
+    - field.field.paragraph.item_reference.field_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.item_reference
+  module:
+    - image
+    - text
+id: paragraph.item_reference.default
+targetEntityType: paragraph
+bundle: item_reference
+mode: default
+content:
+  field_caption:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_content:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

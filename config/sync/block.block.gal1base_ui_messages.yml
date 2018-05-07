@@ -1,0 +1,22 @@
+uuid: 94a7f159-f50b-421c-9c0a-04d3e06114c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - gal1base_ui
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: gal1base_ui_messages
+theme: gal1base_ui
+region: content
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

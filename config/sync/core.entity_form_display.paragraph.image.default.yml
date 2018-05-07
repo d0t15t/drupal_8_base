@@ -1,0 +1,59 @@
+uuid: 26bba71b-785f-4d6b-88cb-fe00e8fe0cc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image.field_caption
+    - field.field.paragraph.image.field_image
+    - field.field.paragraph.image.field_title
+    - field.field.paragraph.image.field_year
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image
+  module:
+    - allowed_formats
+    - image
+    - text
+id: paragraph.image.default
+targetEntityType: paragraph
+bundle: image
+mode: default
+content:
+  field_caption:
+    weight: 3
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '0'
+        hide_guidelines: '0'
+    type: text_textarea
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_year:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

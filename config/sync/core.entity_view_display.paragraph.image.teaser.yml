@@ -1,0 +1,32 @@
+uuid: 5ace4a15-0e6c-4ded-be9f-3f6ab1539e39
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teaser
+    - field.field.paragraph.image.field_caption
+    - field.field.paragraph.image.field_image
+    - field.field.paragraph.image.field_title
+    - field.field.paragraph.image.field_year
+    - paragraphs.paragraphs_type.image
+    - responsive_image.styles.wide
+  module:
+    - responsive_image
+id: paragraph.image.teaser
+targetEntityType: paragraph
+bundle: image
+mode: teaser
+content:
+  field_image:
+    weight: 0
+    label: visually_hidden
+    settings:
+      responsive_image_style: wide
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    region: content
+hidden:
+  field_caption: true
+  field_title: true
+  field_year: true

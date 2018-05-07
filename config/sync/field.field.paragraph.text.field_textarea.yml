@@ -1,0 +1,28 @@
+uuid: 4423794b-2cec-403f-b2ad-2b3ebb186456
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_textarea
+    - paragraphs.paragraphs_type.text
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.text.field_textarea
+field_name: field_textarea
+entity_type: paragraph
+bundle: text
+label: Text
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

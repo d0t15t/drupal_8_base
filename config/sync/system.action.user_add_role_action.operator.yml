@@ -1,0 +1,14 @@
+uuid: b88cf922-48c3-4eef-ac72-9fe7bda22e7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.operator
+  module:
+    - user
+id: user_add_role_action.operator
+label: 'Add the Operator role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: operator

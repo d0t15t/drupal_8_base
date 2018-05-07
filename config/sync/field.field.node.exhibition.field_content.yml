@@ -1,0 +1,28 @@
+uuid: 088f9542-ab7d-47ac-9c58-781fe8e45dfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.artist
+    - node.type.exhibition
+id: node.exhibition.field_content
+field_name: field_content
+entity_type: node
+bundle: exhibition
+label: Artists
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      artist: artist
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,9 @@
+uuid: ce69e342-97f1-40c0-932b-662ef824c1bb
+langcode: en
+status: true
+dependencies: {  }
+id: item_reference
+label: 'Item Reference'
+icon_uuid: null
+description: 'Reference and display an existing piece of content as a teaser which links to the content.'
+behavior_plugins: {  }

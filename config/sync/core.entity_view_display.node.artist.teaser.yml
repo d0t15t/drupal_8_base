@@ -1,0 +1,24 @@
+uuid: bb230b71-616f-4dea-9d19-253615f488e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.artist.field_cv
+    - field.field.node.artist.field_editions
+    - field.field.node.artist.field_exhibitions
+    - node.type.artist
+  module:
+    - user
+id: node.artist.teaser
+targetEntityType: node
+bundle: artist
+mode: teaser
+content:
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_cv: true
+  field_editions: true
+  field_exhibitions: true

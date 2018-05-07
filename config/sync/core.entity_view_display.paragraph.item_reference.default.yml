@@ -1,0 +1,47 @@
+uuid: ee9cca23-7883-44cc-9e2f-8dada4990181
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.item_reference.field_caption
+    - field.field.paragraph.item_reference.field_content
+    - field.field.paragraph.item_reference.field_image
+    - paragraphs.paragraphs_type.item_reference
+    - responsive_image.styles.wide
+  module:
+    - linked_field
+    - responsive_image
+    - text
+id: paragraph.item_reference.default
+targetEntityType: paragraph
+bundle: item_reference
+mode: default
+content:
+  field_caption:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[paragraph:field_content:entity:url]'
+        advanced: {  }
+    type: text_default
+    region: content
+  field_image:
+    weight: 0
+    label: visually_hidden
+    settings:
+      responsive_image_style: wide
+      image_link: ''
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[paragraph:field_content:entity:url]'
+        advanced: {  }
+    type: responsive_image
+    region: content
+hidden:
+  field_content: true

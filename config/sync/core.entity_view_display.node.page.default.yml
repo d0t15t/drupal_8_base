@@ -1,0 +1,33 @@
+uuid: 5a6e8ca6-9514-4db8-b373-741d7746dc2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_paragraphs
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - field_formatter_range
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      field_formatter_range:
+        limit: '0'
+        offset: '0'
+        reverse: 0
+hidden:
+  links: true

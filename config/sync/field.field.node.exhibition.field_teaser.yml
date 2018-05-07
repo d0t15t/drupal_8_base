@@ -1,0 +1,28 @@
+uuid: e927ad8d-67d5-48c0-9d27-d62b50051513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_teaser
+    - node.type.exhibition
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.exhibition.field_teaser
+field_name: field_teaser
+entity_type: node
+bundle: exhibition
+label: Teaser
+description: 'Teaser text is displayed on the front page or in teasers.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

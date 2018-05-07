@@ -1,0 +1,9 @@
+uuid: 4c0725f7-8866-48b4-a299-1aa7b11ccd6c
+langcode: en
+status: true
+dependencies: {  }
+id: node_type_artist
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301

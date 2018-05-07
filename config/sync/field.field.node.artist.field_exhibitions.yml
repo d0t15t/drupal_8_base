@@ -1,0 +1,28 @@
+uuid: 987adceb-a572-4651-a080-d914c79eaf5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exhibitions
+    - node.type.artist
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.artist.field_exhibitions
+field_name: field_exhibitions
+entity_type: node
+bundle: artist
+label: Exhibitions
+description: 'Enter a list of the artist''s exhibitions or other relevant content.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

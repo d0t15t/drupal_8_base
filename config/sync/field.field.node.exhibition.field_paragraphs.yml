@@ -1,0 +1,34 @@
+uuid: 7070a176-bf99-4523-8818-97fa5544c155
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.exhibition
+    - paragraphs.paragraphs_type.image
+  module:
+    - entity_reference_revisions
+id: node.exhibition.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: exhibition
+label: Images
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image: image
+    target_bundles_drag_drop:
+      image:
+        enabled: true
+        weight: 2
+      item_reference:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions
