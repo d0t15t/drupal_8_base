@@ -4,8 +4,8 @@ description: 'Gallery 1 ui theme'
 package: ibt
 core: 8.x
 libraries:
-  - gal1base_ui/global-styling
- 
+  - gal1base_ui/global-theme
+
 base theme: base_ui
 
 regions:
