@@ -1,0 +1,153 @@
+{
+    "name": "ibt/ps120.org",
+    "type": "project",
+    "description": "Drupal 8 base setup composer.",
+    "require": {
+        "brutaldesign/swipebox": "^1.0",
+        "cweagans/composer-patches": "^1.6.0",
+        "dotist/d8base_ui": "^1.0",
+        "drupal/admin_toolbar": "^1.23",
+        "drupal/allowed_formats": "^1.1",
+        "drupal/backup_migrate": "^4.0",
+        "drupal/block_class": "^1.0@alpha",
+        "drupal/chosen": "^2.5",
+        "drupal/console": "^1.0.2",
+        "drupal/contact_block": "^1.4",
+        "drupal/core": "^8.5.3",
+        "drupal/devel": "^1.2",
+        "drupal/field_formatter_range": "^1.0",
+        "drupal/field_group": "3.0-beta1",
+        "drupal/libraries": "^3.0@alpha",
+        "drupal/linked_field": "^1.1",
+        "drupal/menu_force": "^1.0",
+        "drupal/messageclose": "^1.0",
+        "drupal/nice_menus": "^1.0@beta",
+        "drupal/paragraphs": "^1.2",
+        "drupal/permissions_filter": "^1.0",
+        "drupal/rabbit_hole": "^1.0@beta",
+        "drupal/redirect": "^1.2",
+        "drupal/taxonomy_menu": "^3.3",
+        "drupal/token": "^1.1",
+        "drush/drush": "~8.0|^9.0.0-beta8",
+        "harvesthq/chosen": "^1.8",
+        "hussainweb/drupal-composer-helper": "^1.0",
+        "julianshapiro/velocity": "^2.0",
+        "moxiecode/plupload": "^3.1"
+    },
+    "require-dev": {
+        "behat/mink": "~1.7",
+        "behat/mink-goutte-driver": "~1.2",
+        "jcalderonzumba/gastonjs": "~1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "mikey179/vfsstream": "~1.2",
+        "phpunit/phpunit": ">=4.8.28 <5",
+        "symfony/css-selector": "~2.8"
+    },
+    "authors": [
+        {
+            "name": "Isaac Bigsby Trogdon",
+            "email": "mr@dyss.net"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "brutaldesign/swipebox",
+                "version": "1.0",
+                "dist": {
+                    "url": "https://github.com/brutaldesign/swipebox/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "moxiecode/plupload",
+                "version": "3.1.2",
+                "dist": {
+                    "url": "https://github.com/moxiecode/plupload/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "julianshapiro/velocity",
+                "version": "2.0.2",
+                "dist": {
+                    "url": "https://github.com/julianshapiro/velocity/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "dotist/d8base_ui",
+                "version": "1.0.0",
+                "dist": {
+                    "url": "https://github.com/dotist/d8base_ui/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-theme"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "harvesthq/chosen",
+                "version": "1.8.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/harvesthq/chosen/releases/download/v1.8.2/chosen_v1.8.2.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "^1.2.0"
+                }
+            }
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "drupal-composer-helper": {
+            "web-prefix": "www"
+        },
+        "enable-patching": true,
+        "installer-paths": {
+            "www/core": [
+                "type:drupal-core"
+            ],
+            "www/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "www/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "www/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "www/themes/{$name}": [
+                "type:drupal-theme"
+            ]
+        }
+    },
+    "prefer-stable": true,
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
