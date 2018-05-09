@@ -31,6 +31,11 @@ function ps_main_theme() {
     'ps_main' => [
       'render element' => 'children',
     ],
+    'title_simple' => [
+      'variables' => [
+        'title' => '',
+      ],
+    ],
   ];
 }
 
@@ -59,6 +64,40 @@ function ps_main_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_s
 function _ps_main_menu_force_content_types() {
   return [
     'artist',
-    'exhibition',
+    // 'exhibition',
   ];
+}
+
+
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function ps_main_entity_extra_field_info() {
+  $extra_field = [];
+
+  $extra_field['node']['exhibition']['display']['field_title'] = [
+    'label' => t('Custom Title'),
+    'description' => t('Node title as a simple field.'),
+    'weight' => 100,
+    'visible' => TRUE,
+  ];
+
+  return $extra_field;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function ps_main_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($view_mode == 'full') {
+    // Add pseudo-fields.
+    if ($display->getComponent('field_title')) {
+      $build['field_title'] = [
+        '#type' => 'markup',
+        '#theme' => 'title_simple',
+        '#title' => $entity->title->value,
+      ];
+    }
+  }
 }
