@@ -1,6 +1,8 @@
 .vscode
 .vscode/*
 vendor
+cgi-bin
+cgi-bin/*
 www/modules/contrib
 www/sites/default/files
 *.gz
