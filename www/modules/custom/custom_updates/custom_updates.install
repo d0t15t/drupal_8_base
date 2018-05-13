@@ -29,13 +29,20 @@ function custom_updates_update_8201(&$sandbox) {
     'backup_migrate',
     'taxonomy_menu',
     'nice_menus',
-    // 'menu_force',
+    // 'plupload',
     'permissions_filter',
     'allowed_formats',
     'libraries',
     'linked_field',
     'contact_block',
     'redirect',
+    'field_formatter_class',
+    'logouttab',
+    'menu_link_attributes',
+    // 'media',
+    // 'media_entity_image',
+    // 'entity_browser',
+    // 'ctools',
   ];
   \Drupal::service('module_installer')->install($modules);
 }
@@ -45,9 +52,8 @@ function custom_updates_update_8201(&$sandbox) {
  */
 function custom_updates_update_8202(&$sandbox) {
   $modules = [
-    'comment',
+    // 'comment',
     'tour',
   ];
   \Drupal::service('module_installer')->uninstall($modules);
 }
-
