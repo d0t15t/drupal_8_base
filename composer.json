@@ -3,8 +3,9 @@
     "type": "project",
     "description": "Drupal 8 base setup composer.",
     "require": {
-        "brutaldesign/swipebox": "^1.0",
         "cweagans/composer-patches": "^1.6.0",
+        "desandro/imagesloaded": "^4.1",
+        "desandro/masonry": "^4.2",
         "dotist/d8base_ui": "^1.0",
         "drupal/admin_toolbar": "^1.23",
         "drupal/allowed_formats": "^1.1",
@@ -14,25 +15,36 @@
         "drupal/console": "^1.0.2",
         "drupal/contact_block": "^1.4",
         "drupal/core": "^8.5.3",
+        "drupal/ctools": "^3.0",
         "drupal/devel": "^1.2",
-        "drupal/field_formatter_range": "^1.0",
+        "drupal/entity_browser": "^1.4",
+        "drupal/field_formatter_class": "^1.1",
         "drupal/field_group": "3.0-beta1",
+        "drupal/googlemap_block": "^1.1",
+        "drupal/iframe": "^1.9",
+        "drupal/image_formatter_link_to_image_style": "^1.0",
         "drupal/libraries": "^3.0@alpha",
         "drupal/linked_field": "^1.1",
+        "drupal/logouttab": "^1.0@alpha",
+        "drupal/media_entity_image": "^1.3",
         "drupal/menu_force": "^1.0",
+        "drupal/menu_link_attributes": "^1.0",
         "drupal/messageclose": "^1.0",
         "drupal/nice_menus": "^1.0@beta",
         "drupal/paragraphs": "^1.2",
         "drupal/permissions_filter": "^1.0",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.2",
+        "drupal/shield": "^1.2",
         "drupal/taxonomy_menu": "^3.3",
         "drupal/token": "^1.1",
         "drush/drush": "~8.0|^9.0.0-beta8",
         "harvesthq/chosen": "^1.8",
         "hussainweb/drupal-composer-helper": "^1.0",
-        "julianshapiro/velocity": "^2.0",
-        "moxiecode/plupload": "^3.1"
+        "julianshapiro/velocity": "^1.0",
+        "marcandre/detect_swipe": "^2.1",
+        "moxiecode/plupload": "^3.1",
+        "noelboss/featherlight": "^1.7"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -57,10 +69,22 @@
         {
             "type": "package",
             "package": {
-                "name": "brutaldesign/swipebox",
-                "version": "1.0",
+                "name": "noelboss/featherlight",
+                "version": "1.7.6",
                 "dist": {
-                    "url": "https://github.com/brutaldesign/swipebox/archive/master.zip",
+                    "url": "https://github.com/noelboss/featherlight/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "marcandre/detect_swipe",
+                "version": "2.1.1",
+                "dist": {
+                    "url": "https://github.com/marcandre/detect_swipe/archive/master.zip",
                     "type": "zip"
                 },
                 "type": "drupal-library"
@@ -82,9 +106,33 @@
             "type": "package",
             "package": {
                 "name": "julianshapiro/velocity",
-                "version": "2.0.2",
+                "version": "1.0.0",
                 "dist": {
-                    "url": "https://github.com/julianshapiro/velocity/archive/master.zip",
+                    "url": "https://github.com/julianshapiro/velocity/archive/v1.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "desandro/imagesloaded",
+                "version": "4.1.4",
+                "dist": {
+                    "url": "https://github.com/desandro/imagesloaded/archive/master.zip",
+                    "type": "zip"
+                },
+                "type": "drupal-library"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "desandro/masonry",
+                "version": "4.2.0",
+                "dist": {
+                    "url": "https://github.com/desandro/masonry/archive/master.zip",
                     "type": "zip"
                 },
                 "type": "drupal-library"
@@ -124,6 +172,11 @@
             "web-prefix": "www"
         },
         "enable-patching": true,
+        "patches": {
+            "drupal/field_formatter_range": {
+                "2901942 - Notice: Undefined index: third_party_settings": "https://www.drupal.org/files/issues/2018-05-09/2901942-undefined-constand.patch"
+            }
+        },
         "installer-paths": {
             "www/core": [
                 "type:drupal-core"
