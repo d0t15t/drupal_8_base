@@ -39,7 +39,18 @@ function ps_main_theme() {
   ];
 }
 
+/**
+ * Implements hook_form_FORMID_alter.
+ */
+function ps_main_form_contact_message_feedback_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (isset($form['actions']['preview'])) {
+    $form['actions']['preview']['#access'] = FALSE;
+  }
+}
+
 function ps_main_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  // Global settings for forms which have drupal-menu settings available.
   if (isset ($form['menu'])) {
     // Menu options always open.
     $form['menu']['#open'] = true;
@@ -56,6 +67,48 @@ function ps_main_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_s
     // Add js library.
     $form['#attached']['library'][] = 'ps_main/ps-main';
   }
+
+  // Chosen field width
+  if (isset($form['field_artists'])) {
+
+  }
+  $t=1;
+
+
+  // PLUpload settings for field_images.
+  // $image_fields = [
+  //   // 'field_image_main' => t('Main image'),
+  //   // user for single image fields, once we know how to limit the count.
+  //   'field_images' => t('Images'),
+  // ];
+  // foreach ($image_fields as $key => $label) {
+  //   if (isset($form[$key])) {
+  //     $t=1;
+  //     $form[$key] = [
+  //       '#type' => 'plupload',
+  //       '#title' => $label,
+  //       '#description' => t('Drag and drop or click to uplaod.'),
+  //       '#autoupload' => TRUE,
+  //       // '#autosubmit' => TRUE,
+  //       // '#submit_element' => '#id-of-your-submit-element',
+  //       '#upload_validators' => [
+  //         'file_validate_extensions' => ['jpg jpeg gif png'],
+  //         // 'my_custom_file_validator' => array('some validation criteria'),
+  //       ],
+  //       '#plupload_settings' => [
+  //         'runtimes' => 'html5',
+  //         'chunk_size' => '1mb',
+  //       ],
+  //       // '#event_callbacks' => array(
+  //       //   'FilesAdded' => 'Drupal.mymodule.filesAddedCallback',
+  //       //   'UploadComplete' => 'Drupal.mymodule.uploadCompleteCallback',
+  //       // ),
+  //     ];
+
+
+  //   }
+  // }
+
 }
 
 /**
@@ -75,13 +128,18 @@ function _ps_main_menu_force_content_types() {
  */
 function ps_main_entity_extra_field_info() {
   $extra_field = [];
-
-  $extra_field['node']['exhibition']['display']['field_title'] = [
-    'label' => t('Custom Title'),
-    'description' => t('Node title as a simple field.'),
-    'weight' => 100,
-    'visible' => TRUE,
+  $bundles = [
+    'exhibition',
+    'artist',
   ];
+  foreach ($bundles as $label) {
+    $extra_field['node'][$label]['display']['field_title'] = [
+      'label' => t('Custom Title'),
+      'description' => t('Content title as a simple field.'),
+      'weight' => 100,
+      'visible' => TRUE,
+    ];
+  }
 
   return $extra_field;
 }
