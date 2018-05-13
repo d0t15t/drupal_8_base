@@ -1,7 +1,7 @@
 (function($) {
 
   /**
-   * Object definition for displaySettings.
+   * D8 gallery1_ui scripts.js.
    *
    * @param {*}
    */

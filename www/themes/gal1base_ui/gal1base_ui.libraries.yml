@@ -8,3 +8,4 @@ global-theme:
   dependencies:
     - core/drupal
     - core/jquery
+    - core/jquery.once
