@@ -1,0 +1,29 @@
+uuid: d8629b19-d796-4543-b684-93040557ff99
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.iframe
+    - field.storage.block_content.field_iframe
+  module:
+    - iframe
+id: block_content.iframe.field_iframe
+field_name: field_iframe
+entity_type: block_content
+bundle: iframe
+label: Map
+description: 'Enter the <iframe> for the map.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  class: ''
+  frameborder: '0'
+  scrolling: auto
+  transparency: '0'
+  tokensupport: '0'
+  title: ''
+  height: ''
+  width: ''
+field_type: iframe

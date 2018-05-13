@@ -1,0 +1,50 @@
+uuid: c0e527a0-c5e2-43e2-99e3-8a0c494f0d6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.iframe
+    - field.field.block_content.iframe.body
+    - field.field.block_content.iframe.field_iframe
+  module:
+    - iframe
+    - text
+id: block_content.iframe.default
+targetEntityType: block_content
+bundle: iframe
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_iframe:
+    weight: 1
+    settings:
+      url: ''
+      title: ''
+      width: ''
+      height: ''
+      class: ''
+      expose_class: ''
+      frameborder: 0
+      scrolling: ''
+      transparency: 0
+      tokensupport: 0
+    third_party_settings: {  }
+    type: iframe_urlwidthheight
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,28 @@
+uuid: a3029429-a6c8-4dc7-86a6-ce6c923d3374
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_class
+    - system
+  theme:
+    - gal1base_ui
+third_party_settings:
+  block_class:
+    classes: 'block-main-menu header-block main-menu dropdown-menu'
+id: mainnavigation
+theme: gal1base_ui
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

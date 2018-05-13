@@ -11,7 +11,7 @@ _core:
 id: gal1base_ui_search
 theme: gal1base_ui
 region: content
-weight: 1
+weight: 3
 provider: null
 plugin: search_form_block
 settings:

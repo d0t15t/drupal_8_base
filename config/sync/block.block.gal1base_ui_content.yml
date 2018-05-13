@@ -11,7 +11,7 @@ _core:
 id: gal1base_ui_content
 theme: gal1base_ui
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: system_main_block
 settings:

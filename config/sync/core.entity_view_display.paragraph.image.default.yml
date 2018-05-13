@@ -5,26 +5,33 @@ dependencies:
   config:
     - field.field.paragraph.image.field_caption
     - field.field.paragraph.image.field_image
-    - field.field.paragraph.image.field_title
-    - field.field.paragraph.image.field_year
     - paragraphs.paragraphs_type.image
+    - responsive_image.styles.wide
   module:
-    - image
+    - field_formatter_class
+    - responsive_image
+    - text
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image
 mode: default
 content:
+  field_caption:
+    type: text_default
+    weight: 1
+    region: content
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
   field_image:
-    type: image
+    type: responsive_image
     weight: 0
     region: content
     label: visually_hidden
     settings:
-      image_style: ''
+      responsive_image_style: wide
       image_link: ''
-    third_party_settings: {  }
-hidden:
-  field_caption: true
-  field_title: true
-  field_year: true
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+hidden: {  }

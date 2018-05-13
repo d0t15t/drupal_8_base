@@ -5,32 +5,32 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.exhibition.body
-    - field.field.node.exhibition.field_content
+    - field.field.node.exhibition.field_artists
     - field.field.node.exhibition.field_image_main
-    - field.field.node.exhibition.field_paragraphs
-    - field.field.node.exhibition.field_teaser
+    - field.field.node.exhibition.field_images
     - node.type.exhibition
-    - responsive_image.styles.wide
   module:
-    - responsive_image
+    - field_formatter_class
+    - text
     - user
 id: node.exhibition.teaser
 targetEntityType: node
 bundle: exhibition
 mode: teaser
 content:
-  field_image_main:
-    type: responsive_image
+  body:
+    type: text_summary_or_trimmed
     weight: 0
     region: content
-    label: visually_hidden
+    label: hidden
     settings:
-      responsive_image_style: wide
-      image_link: ''
-    third_party_settings: {  }
+      trim_length: 600
+    third_party_settings:
+      field_formatter_class:
+        class: ''
 hidden:
-  body: true
-  field_content: true
-  field_paragraphs: true
-  field_teaser: true
+  field_artists: true
+  field_image_main: true
+  field_images: true
+  field_title: true
   links: true

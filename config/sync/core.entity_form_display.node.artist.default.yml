@@ -7,12 +7,89 @@ dependencies:
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_editions
     - field.field.node.artist.field_exhibitions
-    - field.field.node.artist.field_paragraphs
+    - field.field.node.artist.field_images
     - node.type.artist
   module:
+    - chosen_field
+    - field_group
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_tabs:
+      children:
+        - group_images
+        - group_editions
+        - group_exhibitions
+        - group_cv
+      parent_name: ''
+      weight: 7
+      format_type: tabs
+      format_settings:
+        label: Tabs
+        direction: horizontal
+        id: ''
+        classes: ''
+      label: Tabs
+      region: content
+    group_images:
+      children:
+        - field_images
+      parent_name: group_tabs
+      weight: 15
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Images
+      region: content
+    group_editions:
+      children:
+        - field_editions
+      parent_name: group_tabs
+      weight: 16
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Editions
+      region: content
+    group_cv:
+      children:
+        - field_cv
+      parent_name: group_tabs
+      weight: 18
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: CV
+      region: content
+    group_exhibitions:
+      children:
+        - field_exhibitions
+        - field_content
+      parent_name: group_tabs
+      weight: 17
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: Exhibitions
+      region: content
 id: node.artist.default
 targetEntityType: node
 bundle: artist
@@ -25,16 +102,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_content:
-    weight: 10
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    weight: 9
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_cv:
-    weight: 11
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -42,7 +116,7 @@ content:
     type: text_textarea
     region: content
   field_editions:
-    weight: 8
+    weight: 13
     settings:
       rows: 5
       placeholder: ''
@@ -50,24 +124,24 @@ content:
     type: text_textarea
     region: content
   field_exhibitions:
-    weight: 9
+    weight: 8
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_paragraphs:
-    type: entity_reference_paragraphs
-    weight: 7
+  field_images:
+    weight: 12
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
-      add_mode: button
+      add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: image
+      default_paragraph_type: ''
     third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   path:
     type: path
@@ -112,5 +186,10 @@ content:
       size: 60
       placeholder: ''
     region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 11
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

@@ -1,21 +1,21 @@
-uuid: 7070a176-bf99-4523-8818-97fa5544c155
+uuid: c05cbb49-0483-419c-8b0e-94581749bcb7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_paragraphs
+    - field.storage.node.field_images
     - node.type.exhibition
     - paragraphs.paragraphs_type.image
   module:
     - entity_reference_revisions
-id: node.exhibition.field_paragraphs
-field_name: field_paragraphs
+id: node.exhibition.field_images
+field_name: field_images
 entity_type: node
 bundle: exhibition
 label: Images
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -27,8 +27,11 @@ settings:
     target_bundles_drag_drop:
       image:
         enabled: true
-        weight: 2
-      item_reference:
         weight: 4
+      item_reference:
+        weight: 5
+        enabled: false
+      text:
+        weight: 6
         enabled: false
 field_type: entity_reference_revisions

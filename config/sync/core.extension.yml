@@ -27,6 +27,7 @@ module:
   editor: 0
   entity_reference_revisions: 0
   field: 0
+  field_formatter_class: 0
   field_formatter_range: 0
   field_group: 0
   field_ui: 0
@@ -34,9 +35,12 @@ module:
   filter: 0
   help: 0
   history: 0
+  iframe: 0
   image: 0
   kint: 0
   link: 0
+  logouttab: 0
+  menu_link_attributes: 0
   menu_ui: 0
   messageclose: 0
   nice_menus: 0

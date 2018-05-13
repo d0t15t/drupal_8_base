@@ -1,0 +1,22 @@
+uuid: 9f6bbf98-0177-4ad1-bd92-f79afb84905d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.iframe
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.iframe.body
+field_name: body
+entity_type: block_content
+bundle: iframe
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

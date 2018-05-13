@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.artist.field_cv
     - field.field.node.artist.field_editions
     - field.field.node.artist.field_exhibitions
-    - field.field.node.artist.field_paragraphs
+    - field.field.node.artist.field_images
     - node.type.artist
   module:
     - entity_reference_revisions
@@ -24,26 +24,35 @@ third_party_settings:
         - group_cv
       parent_name: ''
       weight: 1
-      format_type: tabs
+      format_type: html_element
       format_settings:
         label: Tabs
-        direction: horizontal
-        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: page-tabs
         classes: ''
       label: Tabs
       region: content
     group_images:
       children:
-        - field_paragraphs
         - field_images
       parent_name: group_tabs
       weight: 20
-      format_type: tab
+      format_type: html_element
       format_settings:
+        label: Images
+        element: div
+        show_label: false
+        label_element: h6
+        attributes: 'page-tab="1"'
+        effect: none
+        speed: fast
         id: ''
         classes: ''
-        formatter: open
-        description: ''
       label: Images
       region: content
     group_editions:
@@ -51,25 +60,36 @@ third_party_settings:
         - field_editions
       parent_name: group_tabs
       weight: 21
-      format_type: tab
+      format_type: html_element
       format_settings:
+        label: Editions
+        element: div
+        show_label: false
+        label_element: h6
+        attributes: 'page-tab="2"'
+        effect: none
+        speed: fast
         id: ''
         classes: ''
-        formatter: closed
-        description: ''
       label: Editions
       region: content
     group_exhibitions:
       children:
         - field_exhibitions
+        - field_content
       parent_name: group_tabs
       weight: 22
-      format_type: tab
+      format_type: html_element
       format_settings:
+        label: Exhibitions
+        element: div
+        show_label: false
+        label_element: h6
+        attributes: 'page-tab="3"'
+        effect: none
+        speed: fast
         id: ''
         classes: ''
-        formatter: closed
-        description: ''
       label: Exhibitions
       region: content
     group_cv:
@@ -77,12 +97,17 @@ third_party_settings:
         - field_cv
       parent_name: group_tabs
       weight: 23
-      format_type: tab
+      format_type: html_element
       format_settings:
+        label: CV
+        element: div
+        show_label: false
+        label_element: h6
+        attributes: 'page-tab="4"'
+        effect: none
+        speed: fast
         id: ''
         classes: ''
-        formatter: closed
-        description: ''
       label: CV
       region: content
 id: node.artist.default
@@ -91,8 +116,8 @@ bundle: artist
 mode: default
 content:
   field_content:
-    weight: 25
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -100,36 +125,41 @@ content:
     region: content
   field_cv:
     weight: 5
-    label: hidden
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_editions:
     weight: 3
-    label: hidden
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_exhibitions:
     weight: 4
-    label: hidden
+    label: visually_hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_paragraphs:
-    type: entity_reference_revisions_entity_view
-    weight: 24
-    label: hidden
+  field_images:
+    weight: 26
+    label: visually_hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
-  links:
+  field_title:
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

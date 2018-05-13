@@ -1,0 +1,8 @@
+uuid: 5be4f50b-b3e6-4d6c-bfd2-1bc5eee81362
+langcode: en
+status: true
+dependencies: {  }
+id: iframe
+label: Iframe
+revision: 0
+description: 'Block containing an iframe.'

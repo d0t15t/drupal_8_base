@@ -1,0 +1,41 @@
+uuid: bedc3039-260f-441a-a910-ff460d0673a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.iframe
+    - field.field.block_content.iframe.body
+    - field.field.block_content.iframe.field_iframe
+  module:
+    - iframe
+    - text
+id: block_content.iframe.default
+targetEntityType: block_content
+bundle: iframe
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_iframe:
+    weight: 0
+    label: visually_hidden
+    settings:
+      url: ''
+      title: ''
+      width: ''
+      height: ''
+      class: ''
+      expose_class: ''
+      frameborder: '0'
+      scrolling: auto
+      transparency: '0'
+      tokensupport: '0'
+    third_party_settings: {  }
+    type: iframe_only
+    region: content
+hidden: {  }

@@ -9,7 +9,7 @@ _core:
 id: gal1base_ui_local_tasks
 theme: gal1base_ui
 region: content
-weight: -6
+weight: -7
 provider: null
 plugin: local_tasks_block
 settings:

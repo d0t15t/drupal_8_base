@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.exhibition.body
-    - field.field.node.exhibition.field_content
+    - field.field.node.exhibition.field_artists
     - field.field.node.exhibition.field_image_main
-    - field.field.node.exhibition.field_paragraphs
-    - field.field.node.exhibition.field_teaser
+    - field.field.node.exhibition.field_images
     - image.style.thumbnail
     - node.type.exhibition
   module:
+    - chosen_field
     - image
     - paragraphs
     - path
@@ -22,7 +22,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 9
+    weight: 8
     settings:
       rows: 9
       summary_rows: 3
@@ -35,42 +35,31 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_content:
-    weight: 10
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+  field_artists:
+    weight: 9
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: chosen_select
     region: content
   field_image_main:
-    weight: 7
+    weight: 10
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
     region: content
-  field_paragraphs:
-    weight: 8
+  field_images:
+    type: entity_reference_paragraphs
+    weight: 11
     settings:
       title: Paragraph
       title_plural: Paragraphs
       edit_mode: open
-      add_mode: button
+      add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: image
+      default_paragraph_type: ''
     third_party_settings: {  }
-    type: entity_reference_paragraphs
-    region: content
-  field_teaser:
-    weight: 26
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
     region: content
   path:
     type: path
@@ -89,7 +78,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 6
+    weight: 7
     region: content
     third_party_settings: {  }
   sticky:
@@ -115,5 +104,10 @@ content:
       size: 60
       placeholder: ''
     region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

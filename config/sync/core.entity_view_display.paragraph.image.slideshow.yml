@@ -1,21 +1,20 @@
-uuid: 5ace4a15-0e6c-4ded-be9f-3f6ab1539e39
+uuid: 7fd730b3-7d83-4bd2-886d-d8935e8d69cb
 langcode: en
-status: true
+status: false
 dependencies:
   config:
-    - core.entity_view_mode.paragraph.teaser
+    - core.entity_view_mode.paragraph.slideshow
     - field.field.paragraph.image.field_caption
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
     - responsive_image.styles.narrow
   module:
-    - field_formatter_class
     - responsive_image
     - text
-id: paragraph.image.teaser
+id: paragraph.image.slideshow
 targetEntityType: paragraph
 bundle: image
-mode: teaser
+mode: slideshow
 content:
   field_caption:
     type: text_default
@@ -25,14 +24,12 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_image:
+    type: responsive_image
     weight: 0
+    region: content
     label: visually_hidden
     settings:
       responsive_image_style: narrow
       image_link: ''
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-    type: responsive_image
-    region: content
+    third_party_settings: {  }
 hidden: {  }

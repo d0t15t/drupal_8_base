@@ -1,33 +1,34 @@
-uuid: 04b2ec11-259e-4422-a3e3-bdcc23713c5d
+uuid: 1e8c5351-fc14-4230-b4fb-3ed91a7ec93b
 langcode: en
 status: true
 dependencies:
   config:
-    - contact.form.feedback
+    - views.view.content_recent
   module:
     - block_class
-    - contact_block
     - system
+    - views
   theme:
     - gal1base_ui
 third_party_settings:
   block_class:
-    classes: 'block '
-id: contactblock
+    classes: ''
+id: views_block__content_recent_block_1
 theme: gal1base_ui
 region: content
-weight: 0
+weight: 1
 provider: null
-plugin: contact_block
+plugin: 'views_block:content_recent-block_1'
 settings:
-  id: contact_block
-  label: Contact
-  provider: contact_block
+  id: 'views_block:content_recent-block_1'
+  label: ''
+  provider: views
   label_display: visible
-  contact_form: feedback
+  views_label: ''
+  items_per_page: none
 visibility:
   request_path:
     id: request_path
-    pages: /information
+    pages: '/user/*'
     negate: false
     context_mapping: {  }

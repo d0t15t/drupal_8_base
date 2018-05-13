@@ -11,7 +11,7 @@ _core:
 id: gal1base_ui_help
 theme: gal1base_ui
 region: content
-weight: -3
+weight: -4
 provider: null
 plugin: help_block
 settings:
