@@ -11,7 +11,7 @@ dependencies:
     - gal1base_ui
 third_party_settings:
   block_class:
-    classes: 'block-main-menu header-block main-menu dropdown-menu'
+    classes: 'block-main-menu header-block main-menu'
 id: mainnavigation
 theme: gal1base_ui
 region: header
