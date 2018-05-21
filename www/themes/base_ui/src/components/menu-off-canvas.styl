@@ -23,18 +23,21 @@
   background-color rgba(white, 0.95);
   opacity 0
   display none;
-  transition all
+  transition all 300ms ease-out
   &.active
     opacity 0.9
     display block
     z-index: 1
-.off-canvas-menu
+
+[menu-mobile]
   position fixed
   top 110px
   right 0
   z-index: 2
   &.menu-closed
     height 0
+    // max-height: 0
+    // overflow hidden
   img
     top 0
     right 0
