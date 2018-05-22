@@ -1,27 +1,29 @@
 Height = 50px
 
 header
-footer
   img
     height 35px
     vertical-align: middle
   .region
-    height Height
-    display: table
+    #main-navigation
+      overflow auto
 
 header
   position relative
-  #block-mainnavigation.main-menu
+  #block-mainnavigation.main-menu.desktop-menu
     position: absolute
     z-index 1
     right 0
     &[dropdown-active="1"]
       z-index 2
     > ul
-      display table
+      // display table
       > li
-        display table-cell
+        // display table-cell
+        display inline
         padding 0 10px
+        &:last-child
+          padding-right 0
 
 nav
   ul
@@ -32,32 +34,30 @@ nav
           text-decoration: underline
 
   &.dropdown-menu
+    text-align: right
     > ul
+      position relative
       > li
-        > ul
-        > ul  >li
-          // opacity 0
+        text-align: right
+        position relative
         > ul
           // background COLOR_WHITE
-          display: block;
+          display none
           position: absolute;
+          right 0
           min-width: 200px;
-
           z-index: 1;
-          // background-color lighten(COLOR_BACKGROUND, 20%)
           max-height 0
           padding 0
-          overflow hidden
           opacity 0
-          transition: all 200ms
-          margin-left -18px
-          padding: 13px 5px 13px 20px
+          transition: max-height 2000ms ease-out
+          padding: 13px 12px 13px 0px
           > li
             padding 3px 2px 3px 0
           &.submenu-open
             opacity 1
-            max-height: 1000px
+            max-height: 500px
+            display: block;
             // padding: 13px 5px 13px 20px
             > li
               // max-height: 200px
-

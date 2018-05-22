@@ -36,13 +36,13 @@
   z-index: 2
   &.menu-closed
     height 0
-    // max-height: 0
-    // overflow hidden
+    max-height: 0
+    overflow hidden
   img
     top 0
     right 0
     // margin 25px 25px 0 0
-    margin 25px 25px 0 0
+    margin 22px 20px 0 0
     position fixed
     display block
     cursor pointer
@@ -71,6 +71,13 @@
           > a
             font-size 42px
             line-height: 54px
-          // Custom hidding 'all exhibitions link'
-          [data-drupal-link-system-path="exhibitions"]
-            display none
+// Custom hidding 'all exhibitions link'
+[menu-mobile]
+  [title="See a list of all exhibitions"]
+  [href="#ignore"]
+    display none
+[menu-desktop]
+  [data-drupal-link-system-path="artists"]
+    display none
+  [title="See a list of all exhibitions"]
+    display unset

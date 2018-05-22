@@ -53,6 +53,43 @@ main
               lost-column 1/2
               float none !important
 
+  // main
+  .text-formatted
+    margin-bottom 60px
+    h2
+    h3
+      margin 0
+      + p
+        margin-top 3px
+    blockquote
+      padding 20px 20px 20px 20px !important
+      margin 0
+      display block
+      clear both
+      overflow: auto
+      p
+        font-style: italic
+        font-weight: 300
+        margin 0 !important
+        padding 0 !important
+        letter-spacing: 1px
+        &:last-child
+          float right
+          margin-right -20px !important
+          line-height: 0
+          font-style: normal
+
+        &:first-child
+          float none
+          text-align: center
+    li
+      line-height: 1.7rem
+      // 'hanging'-indent like so ->
+      text-indent: -30px;
+      padding-left: 30px;
+
+
+
 
 // Info page.
 .page-node-type-page
@@ -65,38 +102,3 @@ main
     #block-contactblock
       //
 
-
-
-.text-formatted
-  margin-bottom 60px
-  h2
-  h3
-    margin 0
-    + p
-      margin-top 3px
-  blockquote
-    padding 20px 20px 20px 20px !important
-    margin 0
-    display block
-    clear both
-    overflow: auto
-    p
-      font-style: italic
-      font-weight: 300
-      margin 0 !important
-      padding 0 !important
-      letter-spacing: 1px
-      &:last-child
-        float right
-        margin-right -20px !important
-        line-height: 0
-        font-style: normal
-
-      &:first-child
-        float none
-        text-align: center
-  li
-    line-height: 1.7rem
-    // 'hanging'-indent like so ->
-    text-indent: -30px;
-    padding-left: 30px;
