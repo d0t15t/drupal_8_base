@@ -56,8 +56,8 @@
               // 'translateX': (offset * -1) + 'px',
               'opacity': status,
             }, {
-              duration: 100,
-              easing: 'easeout',
+              duration: 50,
+              easing: 'easein',
             });
             $menu.parent().attr('off-canvas-status', status);
             $menu.parent().toggleClass('menu-closed');
@@ -70,7 +70,7 @@
           $burger.click(function(e){
             toggleMenu($menu);
           });
-          let $canvas = $('#off-canvas-menu-pseudo-canvas');
+          let $canvas = $('#menu-canvas');
           $canvas.click(function(e){
             console.log('menu = ' + $menu);
             toggleMenu($menu);
@@ -209,53 +209,66 @@
   /**
    * Init dropdown menus.
    */
-  // Drupal.behaviors.dropdownMenu = {
-  //   attach: function (context, settings) {
-  //     $('.dropdown-menu', context).once('dropdownMenu').each(function () {
-  //       function toggleDropdown($menu, $submenu, $link, clickEvent, override = null) {
-  //         if (override == -1) {
-  //           $menu.find('a.active').removeClass('active');
-  //           $menu.find('ul.submenu-open').removeClass('submenu-open');
-  //           $menu.attr('dropdown-active', 0);
-  //           $canvas.removeClass('active');
-  //           return false;
-  //         }
-  //         if ($submenu.length != 0) {
-  //           clickEvent.preventDefault();
+  Drupal.behaviors.dropdownMenu = {
+    attach: function (context, settings) {
+      $('#main-navigation nav[menu-desktop]', context).once('dropdownMenu').each(function () {
 
-  //           // Toggle out any currently active menus.
-  //           let $siblings = $link.parent().siblings('li');
-  //           $siblings.find('a.active').removeClass('active');
-  //           $siblings.find('ul.submenu-open').removeClass('submenu-open');
-  //           // Toggle active submenu.
-  //           $link.toggleClass('active');
-  //           $submenu.toggleClass('submenu-open');
-  //           // Global menu settings.
-  //           if($menu.find('a.active').length > 0) {
-  //             $menu.attr('dropdown-active', 1);
-  //             $canvas.addClass('active')
-  //           }
-  //           else {
-  //             $menu.attr('dropdown-active', 0);
-  //             $canvas.removeClass('active')
-  //           }
-  //         }
-  //       }
-  //       let $menu = $(this);
-  //       $menu.attr('dropdown-active', 0);
-  //       let $canvas = $('#off-canvas-menu-pseudo-canvas');
-  //       $menu.find('li a').click(function(e){
-  //         let $link = $(this);
-  //         let $submenu = $link.siblings('ul');
-  //         // If submenu exists under this link, toggle open.
-  //         toggleDropdown($menu, $submenu, $link, e);
-  //       });
-  //       $canvas.click(function(e){
-  //         toggleDropdown($menu, false, false, e, -1);
-  //       });
-  //     });
-  //   }
-  // }
+        function toggleDropdown($menu, $submenu, $link, clickEvent, override = null) {
+          if (override == -1) {
+            $menu.find('a.active').removeClass('active');
+            $menu.find('ul.submenu-open').removeClass('submenu-open');
+            $menu.attr('dropdown-active', 0);
+            $canvas.removeClass('active');
+            return false;
+          }
+          // console.log('submenu maybe')
+          // console.log($submenu);
+          if ($submenu.length != 0) {
+
+            clickEvent.preventDefault();
+
+            // Toggle out any currently active menus.
+            let $siblings = $link.parent().siblings('li');
+            $siblings.find('a.active').removeClass('active');
+            $siblings.find('ul.submenu-open').removeClass('submenu-open');
+            // Toggle active submenu.
+            $link.toggleClass('active');
+            $submenu.toggleClass('submenu-open');
+            // Global menu settings.
+            if($menu.find('a.active').length > 0) {
+              $menu.attr('dropdown-active', 1);
+              $canvas.addClass('active')
+            }
+            else {
+              $menu.attr('dropdown-active', 0);
+              $canvas.removeClass('active')
+            }
+          }
+        }
+
+        let $menu = $(this);
+        let $canvas = $('#menu-canvas');
+        console.log($(this));
+
+        $menu.attr('dropdown-active', 0);
+        $menu.find('li a').click(function(e){
+          // let $link = $(this);
+          let $link = $(this).parent().children('a');
+          let $submenu = $(this).parent().children('ul');
+          console.log($link);
+          console.log($submenu);
+          // If submenu exists under this link, toggle open.
+          e.preventDefault();
+          toggleDropdown($menu, $submenu, $link, e);
+        });
+
+        $canvas.click(function(e){
+          toggleDropdown($menu, false, false, e, -1);
+        });
+
+      });
+    }
+  }
 
   })(jQuery);
 

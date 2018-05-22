@@ -12,7 +12,7 @@
 //   display:  none
 
 // this element is used to 'canvas' the page content when the off-canvas menu is active.
-#off-canvas-menu-pseudo-canvas
+#menu-canvas
   position fixed
   top 0
   left 0
@@ -23,7 +23,7 @@
   background-color rgba(white, 0.95);
   opacity 0
   display none;
-  transition all 300ms ease-out
+  transition all 500ms ease-out
   &.active
     opacity 0.9
     display block
@@ -42,12 +42,12 @@
     top 0
     right 0
     // margin 25px 25px 0 0
-    margin 50px 50px 0 0
+    margin 25px 25px 0 0
     position fixed
     display block
     cursor pointer
-    height 35px
-    width 35px
+    height 25px
+    width 25px
 
   > ul
     // top 0
