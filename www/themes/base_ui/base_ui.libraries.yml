@@ -23,8 +23,8 @@ featherlight:
   version: 1.x
   css:
     layout:
-      /libraries/featherlight/release/featherlight.min.css: {}
-      /libraries/featherlight/release/featherlight.gallery.min.css: {}
+      # /libraries/featherlight/release/featherlight.min.css: {}
+      # /libraries/featherlight/release/featherlight.gallery.min.css: {}
   js:
     /libraries/featherlight/release/featherlight.min.js: {}
     /libraries/featherlight/release/featherlight.gallery.min.js: {}
