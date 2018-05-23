@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.artist.field_content
     - field.field.node.artist.field_cv
-    - field.field.node.artist.field_editions
     - field.field.node.artist.field_exhibitions
     - field.field.node.artist.field_images
     - node.type.artist
@@ -18,7 +17,6 @@ third_party_settings:
   field_group:
     group_tabs:
       children:
-        - group_images
         - group_editions
         - group_exhibitions
         - group_cv
@@ -37,34 +35,16 @@ third_party_settings:
         classes: ''
       label: Tabs
       region: content
-    group_images:
-      children:
-        - field_images
-      parent_name: group_tabs
-      weight: 20
-      format_type: html_element
-      format_settings:
-        label: Images
-        element: div
-        show_label: false
-        label_element: h6
-        attributes: 'page-tab="1"'
-        effect: none
-        speed: fast
-        id: ''
-        classes: ''
-      label: Images
-      region: content
     group_editions:
       children:
-        - field_editions
+        - field_images
       parent_name: group_tabs
       weight: 21
       format_type: html_element
       format_settings:
         label: Editions
         element: div
-        show_label: false
+        show_label: true
         label_element: h6
         attributes: 'page-tab="2"'
         effect: none
@@ -83,7 +63,7 @@ third_party_settings:
       format_settings:
         label: Exhibitions
         element: div
-        show_label: false
+        show_label: true
         label_element: h6
         attributes: 'page-tab="3"'
         effect: none
@@ -101,7 +81,7 @@ third_party_settings:
       format_settings:
         label: CV
         element: div
-        show_label: false
+        show_label: true
         label_element: h6
         attributes: 'page-tab="4"'
         effect: none
@@ -125,13 +105,6 @@ content:
     region: content
   field_cv:
     weight: 5
-    label: visually_hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_editions:
-    weight: 3
     label: visually_hidden
     settings: {  }
     third_party_settings: {  }
