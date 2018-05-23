@@ -119,15 +119,16 @@ a:active
 li a.is-active
   // text-decoration: unset
 
-main
-  article
-    .field:not(.field--type-image)
-      a
-        padding-bottom 1px
-        border-bottom 1px solid black
-        &:hover
-          border-bottom 1px solid transparent
-          color COLOR_GREY_DARK
+body:not(.path-frontpage)
+  main
+    article
+      .field:not(.field--type-image)
+        a
+          padding-bottom 1px
+          border-bottom 1px solid black
+          &:hover
+            border-bottom 1px solid transparent
+            color COLOR_GREY_DARK
 
 html .field__label // needs a wrapper to override field.css
   font-weight: 200
