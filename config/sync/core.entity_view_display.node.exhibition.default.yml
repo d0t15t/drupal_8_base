@@ -50,7 +50,7 @@ content:
     weight: 4
     label: hidden
     settings:
-      view_mode: slideshow
+      view_mode: default
       link: ''
     third_party_settings:
       field_formatter_class:
