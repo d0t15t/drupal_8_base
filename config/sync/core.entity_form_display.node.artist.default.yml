@@ -33,8 +33,7 @@ third_party_settings:
       label: Tabs
       region: content
     group_images:
-      children:
-        - field_images
+      children: {  }
       parent_name: group_tabs
       weight: 15
       format_type: tab
@@ -48,7 +47,7 @@ third_party_settings:
       region: content
     group_editions:
       children:
-        - field_editions
+        - field_images
       parent_name: group_tabs
       weight: 16
       format_type: tab
