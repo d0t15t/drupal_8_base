@@ -4,6 +4,8 @@ base-theme:
     layout:
       css/styles.css: {}
       # /libraries/milligram/dist/milligram.min.css: {}
+    theme:
+      '//fonts.googleapis.com/css?family=Libre+Franklin:300,300i,400,400i': { type: external, minified: true }
   js:
     js/scripts.js: {}
   dependencies:
