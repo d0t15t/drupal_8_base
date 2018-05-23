@@ -30,8 +30,8 @@
     z-index: 1
 
 [menu-mobile]
-  position fixed
-  top 110px
+  position absolute
+  top 30px
   right 0
   z-index: 2
   &.menu-closed
@@ -48,6 +48,7 @@
     cursor pointer
     height 25px
     width 25px
+    z-index 3
 
   > ul
     // top 0
@@ -62,15 +63,15 @@
     > li
       margin-top 10px
       > a
-        font-size 53px
-        line-height: 70px
+        font-size 30px
+        line-height: 35px
         &.is-active
           text-decoration: none
       > ul
         > li
           > a
-            font-size 42px
-            line-height: 54px
+            font-size 22px
+            line-height: 30px
 // Custom hidding 'all exhibitions link'
 [menu-mobile]
   [title="See a list of all exhibitions"]
