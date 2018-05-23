@@ -8,12 +8,12 @@
 
 .featherlight-next,
 .featherlight-previous {
-	// display: block;
-	// position: absolute;
-	// top: 25px;
-	// right: 25px;
-	// bottom: 0;
-	// left: 80%;
+	display: block;
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	bottom: 0;
+	left: 80%;
 	cursor: pointer;
 	/* preventing text selection */
 	-webkit-touch-callout: none;
@@ -24,10 +24,6 @@
 	user-select: none;
 	/* IE9 hack, otherwise navigation doesn't appear */
 	background: rgba(0,0,0,0);
-	margin-top 50px
-	span {
-		color transparent;
-	}
 }
 
 .featherlight-previous {
@@ -35,76 +31,55 @@
 	right: 80%;
 }
 
-.featherlight-next,
-.featherlight-previous
-{
-	span {
-		// background-color: rgba(255,255,255,1);
-		background-image url('../images/arrow-next.svg');
-		background-repeat: no-repeat
-		background-size 100px 100px
-		background-size contain
-		height: 50%
-		display block
-		// &:after {
-		// 	content url('../images/arrow.svg')
-		// 	display block
-		// 	height 50px
-		// 	width 50px
-		// 	position relative
-		// }
-
-	}
-}
-.featherlight-previous span
-{
-	background-image url('../images/arrow-prev.svg');
+.featherlight-next:hover,
+.featherlight-previous:hover {
+	// background: rgba(255,255,255,0.25);
 }
 
-.featherlight
-	.featherlight-content
-		.caption
-			display block
-			width 50%
-			margin 50px auto
-			text-align: center
 
-.featherlight-next,
-.featherlight-previous {
-	// display: none;
-	// position: absolute;
-	display inline-block
+.featherlight-next span,
+.featherlight-previous span {
+	display: none;
+	position: absolute;
 
-	// top: 50%;
-	// left: 5%;
-	// width: 82%;
-	width: 100px;
+	top: 50%;
+	top 400px
+	left: 5%;
+	width: 82%;
 
 	/* center horizontally */
 	text-align: center;
 
-	// font-size: 80px;
-	// line-height: 80px;
+	font-size: 80px;
+	line-height: 80px;
 
 	/* center vertically */
-	// margin-top: -40px;
+	margin-top: -40px;
 
+	text-shadow: 0px 0px 5px #fff;
+	// color: #fff;
+	font-style: normal;
+	font-weight: normal;
+	img {
+		width 50px
+		height auto
+	}
 }
-// .featherlight-next span {
-// 	right: 5%;
-// 	left: auto;
-// }
+.featherlight-next span {
+	right: 5%;
+	left: auto;
+}
 
 
-// .featherlight-next:hover span,
-// .featherlight-previous:hover span {
-// 	display: inline-block;
-// }
+.featherlight-next:hover span,
+.featherlight-previous:hover span {
+	display: inline-block;
+}
 
-// .featherlight-swipe-aware .featherlight-next,
-// .featherlight-swipe-aware .featherlight-previous {
-// 	display: none;
-// }
+.featherlight-swipe-aware .featherlight-next,
+.featherlight-swipe-aware .featherlight-previous {
+	display: none;
+}
 
 /* Hide navigation while loading */
 .featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
@@ -119,34 +94,34 @@
 
 
 /* Always display arrows on touch devices */
-// @media only screen and (max-device-width: 1024px){
-// 	.featherlight-next:hover,
-// 	.featherlight-previous:hover {
-// 		background: none;
-// 	}
-// 	.featherlight-next span,
-// 	.featherlight-previous span {
-// 		display: block;
-// 	}
-// }
+@media only screen and (max-device-width: 1024px){
+	.featherlight-next:hover,
+	.featherlight-previous:hover {
+		background: none;
+	}
+	.featherlight-next span,
+	.featherlight-previous span {
+		display: block;
+	}
+}
 
-// /* handling phones and small screens */
-// @media only screen and (max-width: 1024px) {
-// 	.featherlight-next,
-// 	.featherlight-previous {
-// 		top: 10px;
-// 		right: 10px;
-// 		left: 85%;
-// 	}
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+	.featherlight-next,
+	.featherlight-previous {
+		top: 10px;
+		right: 10px;
+		left: 85%;
+	}
 
-// 	.featherlight-previous {
-// 		left: 10px;
-// 		right: 85%;
-// 	}
+	.featherlight-previous {
+		left: 10px;
+		right: 85%;
+	}
 
-// 	.featherlight-next span,
-// 	.featherlight-previous span {
-// 		margin-top: -30px;
-// 		font-size: 40px;
-// 	}
-// }
+	.featherlight-next span,
+	.featherlight-previous span {
+		margin-top: -30px;
+		font-size: 40px;
+	}
+}

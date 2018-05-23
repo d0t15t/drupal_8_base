@@ -100,9 +100,11 @@
   Drupal.behaviors.featherlightSlideshow = {
     attach: function (context, settings) {
 
+      let prev = '<img src="/themes/base_ui/images/arrow-prev.svg">';
+      let next = '<img src="/themes/base_ui/images/arrow-next.svg">';
       $('a[featherlight-item]').featherlightGallery({
-        previousIcon: '«',
-        nextIcon: '»',
+        previousIcon: prev,
+        nextIcon: next,
         galleryFadeIn: 300,
         openSpeed: 300
       });
@@ -110,7 +112,7 @@
       $.featherlightGallery.prototype.afterContent = function() {
         var caption = this.$currentTarget.find('img').attr('title');
         this.$instance.find('.caption').remove();
-        $('<div class="caption">').text(caption).appendTo(this.$instance.find('.featherlight-content'));
+        $('<div class="caption">').html('<p>' + caption + '</p>').appendTo(this.$instance.find('.featherlight-content'));
       };
 
     }
