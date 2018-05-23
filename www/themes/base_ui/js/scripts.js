@@ -135,7 +135,8 @@
         $tabLabelWrapper.attr('page-tabs-labels', '');
         $.each(tabs, function(i){
           let $tab = $(this);
-          let $label = $tab.find('.field__label').first();
+          // let $label = $tab.find('.field__label').first();
+          let $label = $tab.find('h6').first().addClass('field__label visually-hidden');
           let $tabItem = $('<li><a href="#">');
           $tabLabelWrapper.append($tabItem);
           let $tabLink = $tabLabelWrapper.find('a').last();
@@ -165,20 +166,20 @@
     }
   }
 
-  /**
-   * Custom UI for pageTabs menu behavior
-   */
-  Drupal.behaviors.pageTabsUI = {
-    attach: function (context, settings) {
-      $('[page-tabs-labels]', context).once('pageTabsUI').each(function () {
-        let $labels = $(this);
-        $labels.find('li').first().appendTo($(this)).addClass('hide-on-load');
-        $labels.find('a').click(function(){
-          $labels.find('li').removeClass('hide-on-load');
-        });
-      });
-    }
-  }
+  // /**
+  //  * Custom UI for pageTabs menu behavior
+  //  */
+  // Drupal.behaviors.pageTabsUI = {
+  //   attach: function (context, settings) {
+  //     // $('[page-tabs-labels]', context).once('pageTabsUI').each(function () {
+  //     //   let $labels = $(this);
+  //     //   $labels.find('li').first().appendTo($(this)).addClass('hide-on-load');
+  //     //   $labels.find('a').click(function(){
+  //     //     $labels.find('li').removeClass('hide-on-load');
+  //     //   });
+  //     // });
+  //   }
+  // }
 
   /**
    * Init Masonry grids.

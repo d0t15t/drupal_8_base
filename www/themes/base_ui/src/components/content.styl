@@ -21,6 +21,20 @@ main
       .field--name-field-images
       .field--type-entity-reference-revisions
         width 100%
+      .field--name-field-images.field--type-entity-reference-revisions
+        > .field__items > .field__item
+          padding-bottom 60px
+          float left
+          clear both
+          // overflow: auto
+          +above(3)
+            .field--name-field-image
+              lost-column 3/4
+              .field__item
+                margin-bottom unset
+            .field--name-field-caption
+              lost-column 1/4
+
 
     // Exhibition content page
     &.content-type-exhibition
@@ -32,7 +46,7 @@ main
         lost-masonry-wrap: no-flex;
         > .field__item
           lost-masonry-column 1/2
-          margin-bottom 20px
+          // margin-bottom 20px
           // lost-column 1/2
           // width 50%
 
@@ -43,15 +57,9 @@ main
         #page-tabs__tab-labels
           lost-column 1/2
         #page-tabs
-          padding-top 100px
-        .field--name-field-images.field--type-entity-reference-revisions
-          > .field__items > .field__item
-            margin-bottom 60px
-            .field--name-field-image
-              margin-bottom: 20px
-            .field--name-field-caption
-              lost-column 1/2
-              float none !important
+          padding-top 50px
+          +above(3)
+            padding-top 100px
 
   // main
   .text-formatted
@@ -60,28 +68,30 @@ main
     h3
       margin 0
       + p
-        margin-top 3px
+        // margin-top 3px
     blockquote
-      padding 20px 20px 20px 20px !important
+      padding 0 20px 20px 20px !important
       margin 0
       display block
       clear both
       overflow: auto
       p
-        font-style: italic
+        // font-style: italic
         font-weight: 300
         margin 0 !important
-        padding 0 !important
+        // padding 0 !important
+        padding 0 20px !important
         letter-spacing: 1px
         &:last-child
           float right
           margin-right -20px !important
+          margin-top 15px !important
           line-height: 0
           font-style: normal
 
         &:first-child
-          float none
-          text-align: center
+          // float none
+          // text-align: center
     li
       line-height: 1.7rem
       // 'hanging'-indent like so ->
