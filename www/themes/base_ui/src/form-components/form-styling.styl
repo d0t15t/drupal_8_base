@@ -1,9 +1,3 @@
-.button
-  border-radius 7px
-  padding 3px 10px
-  &:hover
-    background-color lighten(COLOR_GREY, 80%)
-
 
 body
   header
@@ -12,6 +6,16 @@ body
     form
       .form-item
         margin-top 0
+        .button
+          border-radius 7px
+          padding 3px 10px
+          &:hover
+            background-color lighten(COLOR_GREY, 80%)
+        input
+          &:not([type="checkbox"])
+            width 100%
+
+
       &#contact-message-feedback-form
         lost-utility clearfix
         lost-column 2/3
@@ -19,9 +23,6 @@ body
         +below(2)
           lost-column 1/1
 
-        input
-          width 100%
-          // lost-column 3/4
         .form-item-name
         .form-item-mail
         .field--name-subject > div
