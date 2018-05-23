@@ -51,7 +51,7 @@ settings:
             - Source
   plugins:
     stylescombo:
-      styles: "h2|Headline\r\nh3|Subheadline"
+      styles: "h2|Headline\r\nh3|Subheadline\r\nsmall|Small-text"
     language:
       language_list: un
 image_upload:
