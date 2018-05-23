@@ -187,15 +187,15 @@
   Drupal.behaviors.masonryInit = {
     attach: function (context, settings) {
       let selector = '.content-type-exhibition .field--name-field-images.field--type-entity-reference-revisions';
-      $(selector, context).once('masonryInit').each(function () {
-        let $masonry = $(this);
-        $masonry.imagesLoaded( function() {
-          $masonry.masonry({
-            itemSelector: '.masonry-item',
-            columnWidth: '.masonry-item'
-          });
-        });
-      });
+      // $(selector, context).once('masonryInit').each(function () {
+      //   let $masonry = $(this);
+      //   $masonry.imagesLoaded( function() {
+      //     $masonry.masonry({
+      //       itemSelector: '.masonry-item',
+      //       columnWidth: '.masonry-item'
+      //     });
+      //   });
+      // });
     }
   }
 
