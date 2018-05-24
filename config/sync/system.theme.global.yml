@@ -9,7 +9,7 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: ''
+  path: themes/gal1base_ui/logo.svg
   url: ''
   use_default: true
 _core:
