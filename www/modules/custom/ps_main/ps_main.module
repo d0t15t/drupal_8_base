@@ -41,10 +41,15 @@ function ps_main_theme() {
 
 /**
  * Implements hook_form_FORMID_alter.
+ *
+ * Website feedback (Contact) form.
  */
 function ps_main_form_contact_message_feedback_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if (isset($form['actions']['preview'])) {
+    // Customize form.
     $form['actions']['preview']['#access'] = FALSE;
+    $form['name']['#title'] = t('Name');
+    $form['mail']['#title'] = t('E-mail address');
   }
 }
 
