@@ -1,0 +1,23 @@
+uuid: d933e1d2-8ac1-47e5-9740-815cf8cc3ef1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slideshow_bool
+    - paragraphs.paragraphs_type.image
+id: paragraph.image.field_slideshow_bool
+field_name: field_slideshow_bool
+entity_type: paragraph
+bundle: image
+label: 'Enable slideshow'
+description: 'Check this box to enable the click triggered slideshow display (Image will be loaded in slideshow / colorbox gallery).'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

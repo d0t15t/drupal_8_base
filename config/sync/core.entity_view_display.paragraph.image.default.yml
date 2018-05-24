@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.image.field_caption
     - field.field.paragraph.image.field_image
+    - field.field.paragraph.image.field_slideshow_bool
     - paragraphs.paragraphs_type.image
     - responsive_image.styles.wide
   module:
@@ -34,4 +35,5 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-hidden: {  }
+hidden:
+  field_slideshow_bool: true
