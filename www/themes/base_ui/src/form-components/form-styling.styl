@@ -6,6 +6,7 @@ body
     form
       .form-item
         margin-top 0
+        margin-bottom 20px
         .button
           border-radius 7px
           padding 3px 10px
@@ -65,7 +66,35 @@ input
 
 
 #contact-message-feedback-form
+#user-login-form
   // Hide required *'s in this form.
   label.form-required
     &:after
       display none
+
+.path-user
+  .tabs-wrapper
+    border-bottom none
+    .tabs
+        margin 0
+        li
+          label
+            background unset
+            a
+              margin-right 20px
+              background unset
+              color COLOR_BLACK
+              text-transform: none
+              padding 0
+              font-size 20px
+              &:hover
+                text-decoration: underline
+  #user-login-form
+  #user-pass
+    margin-top 50px
+    +above(3)
+      margin-top 126px
+    .description
+      display none
+    #edit-actions
+      margin-top 10px
