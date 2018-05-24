@@ -53,8 +53,9 @@
             $canvas.toggleClass('active');
           }
 
-          let $burger = $menu.siblings('img[burger]');
+          let $burger = $menu.parent().siblings('[action-target="menu-mobile"]');
           $burger.click(function(e){
+            console.log('so clicky');
             toggleMenu($menu);
           });
           let $canvas = $('#menu-canvas');
@@ -206,8 +207,6 @@
     attach: function (context, settings) {
       $('#main-navigation nav[menu-desktop]', context).once('dropdownMenu').each(function () {
 
-
-
         let $menu = $(this);
         let $canvas = $('#menu-canvas');
 
@@ -246,46 +245,42 @@
     }
   };
 
+})(jQuery);
 
+function toggleDropdown($menu, $submenu, $link, clickEvent, override = null, $) {
+  var $canvas = $('#menu-canvas');
+  // var $canvas = document.getElementById('#menu-canvas');
+  if (override == -1) {
+    $menu.find('a.active').removeClass('active');
+    $menu.find('ul.submenu-open').removeClass('submenu-open');
+    $menu.attr('dropdown-active', 0);
+    $canvas.removeClass('active');
+    return false;
+  }
+  // console.log('submenu maybe')
+  // console.log($submenu);
+  if ($submenu.length != 0) {
 
-  })(jQuery);
+    clickEvent.preventDefault();
 
-
-  function toggleDropdown($menu, $submenu, $link, clickEvent, override = null, $) {
-    var $canvas = $('#menu-canvas');
-    // var $canvas = document.getElementById('#menu-canvas');
-    if (override == -1) {
-      $menu.find('a.active').removeClass('active');
-      $menu.find('ul.submenu-open').removeClass('submenu-open');
-      $menu.attr('dropdown-active', 0);
-      $canvas.removeClass('active');
-      return false;
+    // Toggle out any currently active menus.
+    let $siblings = $link.parent().siblings('li');
+    $siblings.find('a.active').removeClass('active');
+    $siblings.find('ul.submenu-open').removeClass('submenu-open');
+    // Toggle active submenu.
+    $link.toggleClass('active');
+    $submenu.toggleClass('submenu-open');
+    // Global menu settings.
+    if($menu.find('a.active').length > 0) {
+      $menu.attr('dropdown-active', 1);
+      $canvas.addClass('active')
     }
-    // console.log('submenu maybe')
-    // console.log($submenu);
-    if ($submenu.length != 0) {
-
-      clickEvent.preventDefault();
-
-      // Toggle out any currently active menus.
-      let $siblings = $link.parent().siblings('li');
-      $siblings.find('a.active').removeClass('active');
-      $siblings.find('ul.submenu-open').removeClass('submenu-open');
-      // Toggle active submenu.
-      $link.toggleClass('active');
-      $submenu.toggleClass('submenu-open');
-      // Global menu settings.
-      if($menu.find('a.active').length > 0) {
-        $menu.attr('dropdown-active', 1);
-        $canvas.addClass('active')
-      }
-      else {
-        $menu.attr('dropdown-active', 0);
-        $canvas.removeClass('active')
-      }
+    else {
+      $menu.attr('dropdown-active', 0);
+      $canvas.removeClass('active')
     }
   }
-
+}
 
 function round(number, precision) {
   var shift = function (number, precision) {
