@@ -106,13 +106,31 @@
         previousIcon: prev,
         nextIcon: next,
         galleryFadeIn: 300,
-        openSpeed: 300
+        openSpeed: 300,
+        closeOnClick: 'background',
       });
 
+      // Load caption from title attribute...
+      // Todo: load from php caption value.
       $.featherlightGallery.prototype.afterContent = function() {
         var caption = this.$currentTarget.find('img').attr('title');
         this.$instance.find('.caption').remove();
         $('<div class="caption">').html('<p>' + caption + '</p>').appendTo(this.$instance.find('.featherlight-content'));
+
+
+
+        let string = 'featherlight-content-wrapper';
+        if (this.$instance.find('.' + string).length === 0) {
+          let inner = '<div class"' + string + '">';
+          // this.$instance.find('.featherlight-content').children().wrapAll(inner);
+        }
+
+      };
+
+      $.featherlightGallery.prototype.beforeContent = function() {
+        if ($('.featherlight-content').parent().attr('id') != 'featherlight-wrapper') {
+          $('.featherlight-content').wrap('<div id="featherlight-wrapper">');
+        }
       };
 
     }

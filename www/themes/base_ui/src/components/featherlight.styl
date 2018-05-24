@@ -6,12 +6,11 @@
  * MIT Licensed.
 **/
 
-html.with-featherlight {
+html.with-featherlight
 	/* disable global scrolling when featherlights are visible */
 	overflow: hidden;
-}
 
-.featherlight {
+.featherlight
 	display: none;
 	flex-direction: unset
 
@@ -21,17 +20,17 @@ html.with-featherlight {
 	z-index: 2147483647; /* z-index needs to be >= elements on the site. */
 
 	/* position: centering content */
-	text-align: center;
 
 	/* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
-	white-space: nowrap;
+	// white-space: nowrap;
 
 	/* styling */
-	cursor: pointer;
 	background: rgba(white, 80%);
 	/* IE8 "hack" for nested featherlights */
 	// background: rgba(0, 0, 0, 0);
-}
+	#featherlight-wrapper
+		margin auto
+		position: relative
 
 /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
 .featherlight:last-of-type {
@@ -49,32 +48,15 @@ html.with-featherlight {
 .featherlight .featherlight-content {
 	/* make content container for positioned elements (close button) */
 	position: relative;
-
-	/* position: centering vertical and horizontal */
-	text-align: left;
-	vertical-align: middle;
-	display: inline-block;
-
-	/* dimensions: cut off images */
-	overflow: auto;
-	padding: 25px 25px 0;
-	border-bottom: 25px solid transparent;
-
-	/* dimensions: handling large content */
-	margin: 5%;
-	max-height: 95%;
-
-	/* styling */
-	// background: #fff;
-	cursor: auto;
-
-	/* reset white-space wrapping */
-	white-space: normal;
+	padding 20px
+	// top 0
+	// left 0
+	// margin 80px
+	object-fit contain
 
 	.caption {
-		// margin-top 25px
-		background: rgba(white, 100%)
-		padding 5px;
+		margin-top 10px
+		// padding 5px;
 		p {
 			margin 0
 		}
@@ -123,10 +105,6 @@ html.with-featherlight {
 	padding: 0;
 }
 
-.featherlight .featherlight-image {
-	/* styling */
-	width: 100%;
-}
 
 
 .featherlight-iframe .featherlight-content {

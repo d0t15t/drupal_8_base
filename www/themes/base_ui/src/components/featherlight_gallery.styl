@@ -8,13 +8,7 @@
 
 .featherlight-next,
 .featherlight-previous {
-	display: block;
-	position: absolute;
-	top: 25px;
-	right: 25px;
-	bottom: 0;
-	left: 80%;
-	cursor: pointer;
+
 	/* preventing text selection */
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -23,12 +17,17 @@
 	-ms-user-select: none;
 	user-select: none;
 	/* IE9 hack, otherwise navigation doesn't appear */
-	background: rgba(0,0,0,0);
+	cursor: pointer;
+	display: block;
+	position absolute
+	top: 0
+	right: 0;
+	width: 50%;
+	height: 100%;
 }
 
 .featherlight-previous {
-	left: 25px;
-	right: 80%;
+	left 0
 }
 
 .featherlight-next:hover,
@@ -39,41 +38,33 @@
 
 .featherlight-next span,
 .featherlight-previous span {
-	display: none;
+	// display: none;
 	position: absolute;
-
-	top: 50%;
-	top 400px
-	left: 5%;
-	width: 82%;
-
-	/* center horizontally */
-	text-align: center;
-
-	font-size: 80px;
-	line-height: 80px;
-
-	/* center vertically */
-	margin-top: -40px;
-
+	// display: block;
+	top 50%
+	left 0
+	transform: translateY(-50%)
+	opacity 0
+	transition opacity 100ms ease-out
 	text-shadow: 0px 0px 5px #fff;
-	// color: #fff;
-	font-style: normal;
-	font-weight: normal;
 	img {
 		width 50px
 		height auto
+		margin 35px
 	}
 }
 .featherlight-next span {
-	right: 5%;
-	left: auto;
+	right: 0px;
+	text-align: right
+	img {
+	}
 }
 
 
 .featherlight-next:hover span,
 .featherlight-previous:hover span {
 	display: inline-block;
+	opacity 1
 }
 
 .featherlight-swipe-aware .featherlight-next,

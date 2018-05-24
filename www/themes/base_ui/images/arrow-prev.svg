@@ -5,7 +5,7 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="arrow" fill-rule="nonzero" fill="#000000">
+        <g id="arrow" fill-rule="nonzero" fill="#e1e1e1">
             <polygon id="Shape" transform="translate(111.800000, 84.950000) rotate(-180.000000) translate(-111.800000, -84.950000) " points="106.4 0.8 176.4 70.1 0.3 70.1 0.3 99.8 176.4 99.8 106.4 169.1 148.5 169.1 223.3 94.3 223.3 75.6 148.5 0.8"></polygon>
         </g>
     </g>
