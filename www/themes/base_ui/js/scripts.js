@@ -55,7 +55,6 @@
 
           let $burger = $menu.parent().siblings('[action-target="menu-mobile"]');
           $burger.click(function(e){
-            console.log('so clicky');
             toggleMenu($menu);
           });
           let $canvas = $('#menu-canvas');
