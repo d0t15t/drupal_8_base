@@ -3,8 +3,6 @@ base-theme:
   css:
     layout:
       css/styles.css: {}
-      # /libraries/milligram/dist/milligram.min.css: {}
-      # '//fonts.googleapis.com/css?family=Libre+Franklin:300,300i,400,400i': { type: external, minified: true }
     theme:
   js:
     js/scripts.js: {}
@@ -23,10 +21,6 @@ velocity:
 
 featherlight:
   version: 1.x
-  css:
-    layout:
-      # /libraries/featherlight/release/featherlight.min.css: {}
-      # /libraries/featherlight/release/featherlight.gallery.min.css: {}
   js:
     /libraries/featherlight/release/featherlight.min.js: {}
     /libraries/featherlight/release/featherlight.gallery.min.js: {}

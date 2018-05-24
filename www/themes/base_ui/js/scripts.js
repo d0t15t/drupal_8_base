@@ -53,7 +53,7 @@
             $canvas.toggleClass('active');
           }
 
-          let $burger = $menu.parent().siblings('[action-target="menu-mobile"]');
+          let $burger = $('[action-target="menu-mobile"]').parent();
           $burger.click(function(e){
             toggleMenu($menu);
           });
