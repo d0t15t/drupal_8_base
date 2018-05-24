@@ -4,13 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.exhibition.body
-    - field.field.node.exhibition.field_artists
     - field.field.node.exhibition.field_image_main
     - field.field.node.exhibition.field_images
     - image.style.thumbnail
     - node.type.exhibition
   module:
-    - chosen_field
     - image
     - paragraphs
     - path
@@ -35,12 +33,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_artists:
-    weight: 9
-    settings: {  }
-    third_party_settings: {  }
-    type: chosen_select
-    region: content
   field_image_main:
     weight: 10
     settings:
