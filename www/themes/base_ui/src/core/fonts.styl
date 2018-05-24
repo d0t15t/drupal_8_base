@@ -73,7 +73,7 @@ body
 
 a, a:link, a:visited
   // color inherit
-  transition all 20ms ease-in
+  transition all 100ms ease-in
   text-decoration: none
 
 
@@ -122,13 +122,16 @@ li a.is-active
 body:not(.path-frontpage)
   main
     article
-      .field:not(.field--type-image)
+      .field
         a
-          padding-bottom 1px
+          // padding-bottom 1px
           border-bottom 1px solid black
           &:hover
             border-bottom 1px solid transparent
             color COLOR_GREY_DARK
+      .field--type-image
+        a
+          border-bottom none
 
 html .field__label // needs a wrapper to override field.css
   font-weight: 200
