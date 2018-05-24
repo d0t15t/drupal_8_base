@@ -108,24 +108,32 @@ function base_ui_preprocess_field(array &$variables, $hook) {
       if (isset($variables['entity_type']) && $variables['entity_type'] == 'paragraph') {
         $bundle = $variables['element']['#object']->bundle();
         if ($bundle == 'image') {
-          // Create link to image in large image-style.
-          // @TODO: transition to responsive image style.
-          $image = $variables['element'][0];
-          $uri = $variables['element']['#object']->get($field_name)->entity->getFileUri();
-          $style_url = ImageStyle::load('max_1300x1300')->buildUrl($uri);
-          $url = Url::fromUri($style_url);
-          $link_options = [
-            'attributes' => [
-              'data-featherlight' => 'image',
-              'featherlight-item' => '',
-            ],
-          ];
-          $url->setOptions($link_options);
-          // Create link to image-style on the image element & replace the standard render element.
-          $link = Link::fromTextAndUrl($image, $url);
-          $variables['items'][0]['content'] = $link;
-          // Add caption as attribute.
-            // @todo - how to add caption as field attribute beforehand?
+          $object = $variables['element']['#object'];
+          if ($object->hasField('field_slideshow_bool')) {
+            $slideshow_bool = (int) $object->field_slideshow_bool->value;
+            $t1 = 1;
+            if ($slideshow_bool === 1) {
+              // Create link to image in large image-style.
+              // @TODO: transition to responsive image style.
+              $image = $variables['element'][0];
+              $uri = $object->get($field_name)->entity->getFileUri();
+              $style_url = ImageStyle::load('max_1300x1300')->buildUrl($uri);
+              $url = Url::fromUri($style_url);
+              $link_options = [
+                'attributes' => [
+                  'data-featherlight' => 'image',
+                  'featherlight-item' => '',
+                ],
+              ];
+              $url->setOptions($link_options);
+              // Create link to image-style on the image element & replace the standard render element.
+              $link = Link::fromTextAndUrl($image, $url);
+              $variables['items'][0]['content'] = $link;
+              // Add caption as attribute.
+                // @todo - how to add caption as field attribute beforehand?
+
+            }
+          }
         }
       }
       break;

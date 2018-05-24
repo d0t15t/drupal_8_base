@@ -37,6 +37,30 @@ input
     &:hover
       color COLOR_GREY_DARK
       text-decoration: none
+  &[type="checkbox"]
+    display none
+  &[type="checkbox"] + label
+    &:before
+      background-image url('../images/check-not.svg')
+      background-size: 20px 20px;
+      background-repeat: no-repeat
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      content:'';
+      position relative
+      margin-right 5px
+      top 3px
+      border-radius: 15px
+      overflow hidden
+      transition background-color 100ms ease-out
+  &[type="checkbox"]:checked + label
+    &:before
+      background-image url('../images/check.svg')
+  &[type="checkbox"] + label:hover
+    &:before
+      background-color white
+
 
 
 
