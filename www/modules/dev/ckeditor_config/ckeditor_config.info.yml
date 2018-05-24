@@ -1,0 +1,15 @@
+name: CKEditor custom config
+type: module
+description: 'Provides administration form for CKEditor custom configuration.'
+package: CKEditor
+# core: 8.x
+configure: ckeditor_config.config_form
+
+dependencies:
+  - drupal:ckeditor
+
+# Information added by Drupal.org packaging script on 2017-12-28
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'ckeditor_config'
+datestamp: 1514482087
