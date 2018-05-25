@@ -169,6 +169,10 @@ display:
         title: Artists
         menu_name: main
         weight: -50
+        description: ''
+        parent: ''
+        expanded: true
+        enabled: true
     cache_metadata:
       max-age: -1
       contexts:
