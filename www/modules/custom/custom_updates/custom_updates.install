@@ -39,6 +39,8 @@ function custom_updates_update_8201(&$sandbox) {
     'field_formatter_class',
     'logouttab',
     'menu_link_attributes',
+    'menu_admin_per_menu',
+    // 'masquerade',
     // 'media',
     // 'media_entity_image',
     // 'entity_browser',
