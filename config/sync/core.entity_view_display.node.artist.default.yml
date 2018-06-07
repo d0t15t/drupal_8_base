@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.artist.field_bio
     - field.field.node.artist.field_content
-    - field.field.node.artist.field_cv
     - field.field.node.artist.field_exhibitions
     - field.field.node.artist.field_images
     - node.type.artist
@@ -19,7 +19,7 @@ third_party_settings:
       children:
         - group_editions
         - group_exhibitions
-        - group_cv
+        - group_bio
       parent_name: ''
       weight: 1
       format_type: html_element
@@ -42,7 +42,7 @@ third_party_settings:
       weight: 21
       format_type: html_element
       format_settings:
-        label: Editions
+        label: 'Exhibited works'
         element: div
         show_label: true
         label_element: h6
@@ -51,7 +51,7 @@ third_party_settings:
         speed: fast
         id: ''
         classes: ''
-      label: Editions
+      label: 'Exhibited works'
       region: content
     group_exhibitions:
       children:
@@ -72,29 +72,36 @@ third_party_settings:
         classes: ''
       label: Exhibitions
       region: content
-    group_cv:
+    group_bio:
       children:
-        - field_cv
+        - field_bio
       parent_name: group_tabs
-      weight: 23
+      weight: 24
       format_type: html_element
       format_settings:
-        label: CV
+        label: Biography
         element: div
         show_label: true
         label_element: h6
-        attributes: 'page-tab="4"'
+        attributes: 'page-tab="5"'
         effect: none
         speed: fast
         id: ''
         classes: ''
-      label: CV
+      label: Biography
       region: content
 id: node.artist.default
 targetEntityType: node
 bundle: artist
 mode: default
 content:
+  field_bio:
+    weight: 27
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_content:
     weight: 5
     label: hidden
@@ -102,13 +109,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_cv:
-    weight: 5
-    label: visually_hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
     region: content
   field_exhibitions:
     weight: 4

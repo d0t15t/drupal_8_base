@@ -1,12 +1,12 @@
-uuid: efa145fe-d41d-4d7d-be2a-466c5095cd84
+uuid: 69ce6991-7154-48fe-805d-3d5022959f0b
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_cv
-field_name: field_cv
+id: node.field_bio
+field_name: field_bio
 entity_type: node
 type: text_long
 settings: {  }

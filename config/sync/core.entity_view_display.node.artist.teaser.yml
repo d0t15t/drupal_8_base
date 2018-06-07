@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.artist.field_bio
     - field.field.node.artist.field_content
-    - field.field.node.artist.field_cv
     - field.field.node.artist.field_exhibitions
     - field.field.node.artist.field_images
     - node.type.artist
@@ -23,7 +23,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_bio: true
   field_content: true
-  field_cv: true
   field_exhibitions: true
   field_images: true
