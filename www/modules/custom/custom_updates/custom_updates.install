@@ -40,6 +40,8 @@ function custom_updates_update_8201(&$sandbox) {
     'logouttab',
     'menu_link_attributes',
     'menu_admin_per_menu',
+    'config_split',
+    'config_filter',
     // 'masquerade',
     // 'media',
     // 'media_entity_image',
