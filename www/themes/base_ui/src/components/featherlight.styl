@@ -13,11 +13,20 @@ html.with-featherlight
 .featherlight
 	display: none;
 	flex-direction: unset
+	*
+		box-sizing: border-box
 
 	/* dimensions: spanning the background from edge to edge */
 	position:fixed;
 	top: 0; right: 0; bottom: 0; left: 0;
 	z-index: 2147483647; /* z-index needs to be >= elements on the site. */
+	width 100%
+	height 100%
+	margin auto
+	padding 100px
+	background: rgba(white, 80%);
+	// background: rgba(0,0,255, 0.3);
+
 
 	/* position: centering content */
 
@@ -25,13 +34,8 @@ html.with-featherlight
 	// white-space: nowrap;
 
 	/* styling */
-	background: rgba(white, 80%);
 	/* IE8 "hack" for nested featherlights */
 	// background: rgba(0, 0, 0, 0);
-	#featherlight-wrapper
-		margin auto
-		position: relative
-
 /* support for nested featherlights. Does not work in IE8 (use JS to fix) */
 .featherlight:last-of-type {
 	// background: rgba(0, 0, 0, 0.8);
@@ -48,9 +52,25 @@ html.with-featherlight
 .featherlight .featherlight-content {
 	/* make content container for positioned elements (close button) */
 	position: relative;
-	padding 20px
-	margin 80px
-	object-fit contain
+	margin auto
+	max-width: 100%
+	max-height: 100%
+	// display table
+	// * {
+	// 	display: table-cell
+	// }
+	img  {
+		// position absolute
+		// top 50%
+		// left 50%
+		// transform: translate(-50%, -50%)
+		margin auto
+	}
+	* {
+		// margin auto
+	}
+
+
 
 	.caption {
 		margin-top 10px
@@ -81,6 +101,7 @@ html.with-featherlight
 	z-index: 9999;
 	top: 0;
 	right: 0;
+	opacity 0
 
 	/* dimensions: 25px x 25px */
 	line-height: 25px;

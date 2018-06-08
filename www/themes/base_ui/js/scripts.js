@@ -116,20 +116,64 @@
         var caption = this.$currentTarget.find('img').attr('title');
         this.$instance.find('.caption').remove();
         $('<div class="caption">').html('<p>' + caption + '</p>').appendTo(this.$instance.find('.featherlight-content'));
-
-
-
-        let string = 'featherlight-content-wrapper';
-        if (this.$instance.find('.' + string).length === 0) {
-          let inner = '<div class"' + string + '">';
-          // this.$instance.find('.featherlight-content').children().wrapAll(inner);
-        }
-
       };
+
+      // $.featherlight.prototype.resize = function(w, h) {
+      //   if (w && h) {
+      //     /* Reset apparent image size first so container grows */
+      //     this.$content.css('width', '').css('height', '');
+      //     this.$content.parent().css({
+      //       // 'height': 'unset',
+      //       // 'width': 'unset',
+      //     });
+
+      //     // Change wrapper height & width in order to 'cinch' slideshow items.
+      //     let h = $(window).outerHeight() - 200;
+      //     let w = $(window).outerWidth() - 200;
+      //     let h_diff = h - this.$content.outerHeight();
+      //     let w_diff = w - this.$content.outerWidth();
+      //     let h_offset = h - h_diff + 'px';
+      //     let w_offset = w - w_diff + 'px';
+      //     this.$content.parent().css({
+      //       // 'height': h_offset,
+      //       // 'width': w_offset,
+      //     });
+
+
+
+          // /* Rescale only if the image does not fit in the window */
+          // if (this.$content.parent().width() < w || this.$content.parent().height() < h) {
+          //   /* Calculate the worst ratio so that dimensions fit */
+          //   /* Note: -1 to avoid rounding errors */
+          //   let height_offset = this.$instance.find('.caption').outerHeight();
+          //   var ratio = Math.max(
+          //     w  / (this.$content.parent().width()-1),
+          //     h / (this.$content.parent().height()-1));
+          //   /* Resize content */
+          //   if (ratio > 1) {
+          //     ratio = h / Math.floor(h / ratio); /* Round ratio down so height calc works */
+          //     // this.$content.css('width', '' + w / ratio + 'px').css('height', '' + h / ratio + 'px');
+          //     // this.$content.css('width', 'auto').css('height', '' + (h / ratio) - height_offset + 'px');
+          //     // this.$content.css('width', 'auto').css('height', 'auto');
+          //   }
+          // }
+      //   }
+      // };
+
+      // $.featherlightGallery.prototype.afterContent = function() {
+      //   let caption_height = this.$instance.find('.caption').outerHeight();
+      //   console.log(this.$content);
+      //   let new_height = this.$content.outerHeight() - (caption_height * 2);
+      //   this.$content.css({
+      //     'height': new_height + 'px',
+      //     'width': 'auto'
+      //   });
+      //   console.log(new_height);
+      // };
 
       $.featherlightGallery.prototype.beforeContent = function() {
         if ($('.featherlight-content').parent().attr('id') != 'featherlight-wrapper') {
-          $('.featherlight-content').wrap('<div id="featherlight-wrapper">');
+          // $('.featherlight-content').wrap('<div id="featherlight-wrapper">');
         }
       };
 
