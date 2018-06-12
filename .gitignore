@@ -9,8 +9,8 @@ www/sites/default/files
 www/web.config
 www/*.json
 *.dd
-www/sites/default/settings.php
-www/sites/default/settings.local.php
+www/sites/*/settings.php
+www/sites/*/settings.local.php
 www/libraries
 www/themes/contrib
 www/.csslintrc
@@ -19,4 +19,4 @@ www/.editorconfig
 www/themes/*/node_modules
 #www/core
 www/.ht.router.php
-www/sites/default/services.yml
+www/sites/*/services.yml
