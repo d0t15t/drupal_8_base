@@ -38,7 +38,6 @@ third_party_settings:
         - field_image_main
         - field_summary
         - field_text
-        - body
       parent_name: group_tabs
       weight: 12
       format_type: tab
@@ -69,15 +68,6 @@ targetEntityType: node
 bundle: exhibition
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 13
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
   created:
     type: datetime_timestamp
     weight: 2
@@ -175,4 +165,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  body: true

@@ -46,13 +46,6 @@ content:
         offset: '0'
         reverse: 0
     region: content
-  field_summary:
-    weight: 5
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_text:
     weight: 2
     label: hidden
@@ -72,3 +65,4 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_summary: true
