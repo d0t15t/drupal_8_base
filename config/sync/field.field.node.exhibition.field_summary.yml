@@ -1,0 +1,28 @@
+uuid: be0bd34a-a7e3-4851-8cfe-5b2961917eed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.exhibition
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    restricted_html: '0'
+    full_html: '0'
+    plain_text: '0'
+id: node.exhibition.field_summary
+field_name: field_summary
+entity_type: node
+bundle: exhibition
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -6,6 +6,8 @@ dependencies:
     - field.field.node.exhibition.body
     - field.field.node.exhibition.field_image_main
     - field.field.node.exhibition.field_images
+    - field.field.node.exhibition.field_summary
+    - field.field.node.exhibition.field_text
     - node.type.exhibition
     - responsive_image.styles.wide
   module:
@@ -20,13 +22,6 @@ targetEntityType: node
 bundle: exhibition
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_image_main:
     type: responsive_image
     weight: 0
@@ -38,7 +33,7 @@ content:
     third_party_settings: {  }
   field_images:
     type: entity_reference_revisions_entity_view
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       view_mode: default
@@ -51,14 +46,29 @@ content:
         offset: '0'
         reverse: 0
     region: content
+  field_summary:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_title:
     weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 5
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  body: true

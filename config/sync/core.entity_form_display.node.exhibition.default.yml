@@ -6,9 +6,12 @@ dependencies:
     - field.field.node.exhibition.body
     - field.field.node.exhibition.field_image_main
     - field.field.node.exhibition.field_images
+    - field.field.node.exhibition.field_summary
+    - field.field.node.exhibition.field_text
     - image.style.thumbnail
     - node.type.exhibition
   module:
+    - allowed_formats
     - field_group
     - image
     - paragraphs
@@ -33,6 +36,8 @@ third_party_settings:
     group_main:
       children:
         - field_image_main
+        - field_summary
+        - field_text
         - body
       parent_name: group_tabs
       weight: 12
@@ -66,7 +71,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 11
+    weight: 13
     settings:
       rows: 9
       summary_rows: 3
@@ -98,6 +103,28 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_summary:
+    weight: 11
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textarea
+    region: content
+  field_text:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textarea
     region: content
   path:
     type: path
