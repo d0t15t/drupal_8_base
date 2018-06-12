@@ -34,6 +34,7 @@
         "drupal/messageclose": "^1.0",
         "drupal/nice_menus": "^1.0@beta",
         "drupal/paragraphs": "^1.2",
+        "drupal/pathauto": "^1.2",
         "drupal/permissions_filter": "^1.0",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/redirect": "^1.2",

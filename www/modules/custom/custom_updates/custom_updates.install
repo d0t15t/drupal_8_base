@@ -42,11 +42,12 @@ function custom_updates_update_8201(&$sandbox) {
     'menu_admin_per_menu',
     'config_split',
     'config_filter',
+    'pathauto',
+    'ctools',
     // 'masquerade',
     // 'media',
     // 'media_entity_image',
     // 'entity_browser',
-    // 'ctools',
   ];
   \Drupal::service('module_installer')->install($modules);
 }

@@ -21,6 +21,7 @@ module:
   contact: 0
   contact_block: 0
   contextual: 0
+  ctools: 0
   custom_updates: 0
   datetime: 0
   datetime_range: 0
@@ -60,7 +61,6 @@ module:
   rh_taxonomy: 0
   search: 0
   shortcut: 0
-  stage_file_proxy: 0
   statistics: 0
   syslog: 0
   system: 0
@@ -75,6 +75,7 @@ module:
   views_ui: 0
   menu_admin_per_menu: 1
   menu_link_content: 1
+  pathauto: 1
   views: 10
   paragraphs: 11
   linked_field: 100
