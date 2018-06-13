@@ -139,8 +139,8 @@ function ps_main_entity_extra_field_info() {
   ];
   foreach ($bundles as $label) {
     $extra_field['node'][$label]['display']['field_title'] = [
-      'label' => t('Custom Title'),
-      'description' => t('Content title as a simple field.'),
+      'label' => t('Simple Title'),
+      'description' => t('Just the title, no link (todo, add wrapper option).'),
       'weight' => 100,
       'visible' => TRUE,
     ];
