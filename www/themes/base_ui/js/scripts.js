@@ -238,6 +238,17 @@
         let $menu = $(this);
         let $canvas = $('#menu-canvas');
 
+        // @TODO: temp fix for disappearing scrollbar when menu activates.
+        var b = $('body');
+        var normalw = 0;
+        var scrollw = 0;
+        normalw = window.innerWidth;
+        scrollw = (normalw - b.width()) * -1;
+        if(b.prop('scrollHeight')>b.height()){
+          // console.log('scr h fix');
+          $menu.css({'margin-right': + scrollw +'px'});
+        }
+
         $menu.attr('dropdown-active', 0);
         $menu.find('li a').click(function(e){
           let $link = $(this).parent().children('a');
@@ -306,6 +317,17 @@ function toggleDropdown($menu, $submenu, $link, clickEvent, override = null, $) 
         $canvas.removeClass('active');
         $('body').removeClass('dropdown-menu-active');
       }
+
+      // @todo - temp fix for disappearing scrollbar layout issue.
+      var b = $('body');
+      var normalw = 0;
+      var scrollw = 0;
+      normalw = window.innerWidth;
+      scrollw = (normalw - b.width()) * -1;
+      $menu.css({'margin-right': + scrollw +'px'});
+      // if(b.prop('scrollHeight')>b.height()){
+      //   console.log('scr h');
+      // }
     }
   }
 
@@ -322,7 +344,10 @@ function menuHeightNegotiator($submenu, $) {
   let h = $submenu.outerHeight();
   // Not sure why, but the mobile menu requires extra height to achive overflow scroll.
   let o = $('window').outerWidth() <= 900 ? 130 : 0;
-  if ($main.outerHeight() >= $('window').outerHeight()) {
+  if (
+    ($main.outerHeight() >= $('window').outerHeight())
+    || h >= $('window').outerHeight()
+  ) {
     $main.css({
       'height': h + o + 'px',
     });
@@ -331,7 +356,7 @@ function menuHeightNegotiator($submenu, $) {
     let h = $(window).outerHeight();
     // console.log('window height: ' + h);
     $main.css({
-      'height': h - 100 + 'px',
+      'height': h - 130 + 'px',
     });
   }
 }
