@@ -32,4 +32,5 @@ content:
       responsive_image_style: narrow
       image_link: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_slideshow_bool: true

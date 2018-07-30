@@ -35,4 +35,5 @@ content:
         class: ''
     type: responsive_image
     region: content
-hidden: {  }
+hidden:
+  field_slideshow_bool: true
