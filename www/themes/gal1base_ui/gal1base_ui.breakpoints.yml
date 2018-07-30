@@ -1,6 +1,0 @@
-gal1base_ui.narrow:
-  label: narrow
-  mediaQuery: 'all and (min-width: 560px) and (max-width: 850px)'
-  weight: '1'
-  multipliers:
-    - '1x'
