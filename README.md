@@ -22,8 +22,5 @@ drush config-set "system.site" uuid "[[ uuid ]]"
 
 drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
 
-
-
-
 Enable custom_updates, then:
 drush updb
