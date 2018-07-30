@@ -5,11 +5,25 @@
  * Functions to support theming in the base_ui theme.
  */
 
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Provide region based menu suggestions.
+ */
+function base_ui_theme_suggestions_menu_alter(&$suggestions, array $variables)
+{
+  if (isset($variables['attributes']['region-block-id'])) {
+    $suggestions[] = $variables['attributes']['region-block-id'];
+  }
+}
+
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
-function base_ui_preprocess_html(array &$variables) {
-  $t=1;
+function base_ui_preprocess_html(array &$variables)
+{
   /* Add class to html tag */
   //$variables['html_attributes']->addClass('no-js');
 
@@ -22,7 +36,8 @@ function base_ui_preprocess_html(array &$variables) {
 /**
  * Implements hook_page_attachments_alter().
  */
-function base_ui_page_attachments_alter(array &$page) {
+function base_ui_page_attachments_alter(array &$page)
+{
   // Tell IE to use latest rendering engine (not to use compatibility mode).
   /*$ie_edge = [
     '#type' => 'html_tag',
@@ -38,7 +53,8 @@ function base_ui_page_attachments_alter(array &$page) {
 /**
  * Implements hook_preprocess_page() for page.html.twig.
  */
-function base_ui_preprocess_page(array &$variables) {
+function base_ui_preprocess_page(array &$variables)
+{
 
 }
 
@@ -46,14 +62,18 @@ function base_ui_preprocess_page(array &$variables) {
 /**
  * Implements hook_preprocess_HOOK() for Block document templates.
  */
-function base_ui_preprocess_block(array &$variables) {
-
+function base_ui_preprocess_block(array &$variables)
+{
+  if (isset($variables['elements']['#id'])) {
+    $t = 1;
+  }
 }
 
 /**
  * Implements hook_preprocess_node().
  */
-function base_ui_preprocess_node(array &$variables) {
+function base_ui_preprocess_node(array &$variables)
+{
   // Add custom classes.
   $node = $variables['elements']['#node'];
   $type = $node->getType();
@@ -65,33 +85,35 @@ function base_ui_preprocess_node(array &$variables) {
   ];
   if (isset($variables['attributes']['class'])) {
     array_push($variables['attributes']['class'], $classes);
-  }
-  else {
+  } else {
     $variables['attributes']['class'] = $classes;
   }
   // Default to turning off byline/submitted.
-  $variables['display_submitted'] = FALSE;
+  $variables['display_submitted'] = false;
 }
 
 /**
  * Implements hook_preprocess_form().
  */
-function base_ui_preprocess_views_view(array &$variables) {
-  $t=1;
+function base_ui_preprocess_views_view(array &$variables)
+{
+  $t = 1;
   //$variables['attributes']['novalidate'] = 'novalidate';
 }
 
 /**
  * Implements hook_preprocess_form().
  */
-function base_ui_preprocess_form(array &$variables) {
+function base_ui_preprocess_form(array &$variables)
+{
   //$variables['attributes']['novalidate'] = 'novalidate';
 }
 
 /**
  * Implements hook_preprocess_select().
  */
-function base_ui_preprocess_select(array &$variables) {
+function base_ui_preprocess_select(array &$variables)
+{
   //$variables['attributes']['class'][] = 'select-chosen';
 }
 
@@ -101,7 +123,9 @@ function base_ui_preprocess_select(array &$variables) {
 use Drupal\image\Entity\ImageStyle;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
-function base_ui_preprocess_field(array &$variables, $hook) {
+
+function base_ui_preprocess_field(array &$variables, $hook)
+{
   if (isset($variables['entity_type']) && $variables['entity_type'] == 'paragraph') {
     $bundle = $variables['element']['#object']->bundle();
     if ($bundle == 'image') {
@@ -111,7 +135,7 @@ function base_ui_preprocess_field(array &$variables, $hook) {
       }
     }
   }
-  switch($variables['element']['#field_name']) {
+  switch ($variables['element']['#field_name']) {
     // Apply featherlight-slideshow attributes to node-bundled image field elements,
     // so that display-image & paragraph image fields are one featherlight gallery.
     case 'field_image':
@@ -121,8 +145,7 @@ function base_ui_preprocess_field(array &$variables, $hook) {
         if ($bundle == 'image') {
           $object = $variables['element']['#object'];
           if ($object->hasField('field_slideshow_bool')) {
-            $slideshow_bool = (int) $object->field_slideshow_bool->value;
-            $t1 = 1;
+            $slideshow_bool = (int)$object->field_slideshow_bool->value;
             if ($slideshow_bool === 1) {
               // Create link to image in large image-style.
               // @TODO: transition to responsive image style.
@@ -183,7 +206,8 @@ function base_ui_preprocess_field(array &$variables, $hook) {
 /**
  * Implements hook_preprocess_field().
  */
-function base_ui_preprocess_paragraph(array &$variables) {
+function base_ui_preprocess_paragraph(array &$variables)
+{
   if (isset($variables['paragraph'])) {
     $paragraph = $variables['paragraph'];
     // Add bundle type as attribute.
@@ -201,7 +225,8 @@ function base_ui_preprocess_paragraph(array &$variables) {
 /**
  * Implements hook_preprocess_details().
  */
-function base_ui_preprocess_details(array &$variables) {
+function base_ui_preprocess_details(array &$variables)
+{
   /*$variables['attributes']['class'][] = 'details';
   $variables['summary_attributes']['class'] = 'summary';*/
 }
@@ -209,30 +234,29 @@ function base_ui_preprocess_details(array &$variables) {
 /**
  * Implements hook_preprocess_menu_local_task().
  */
-function base_ui_preprocess_menu_local_task(array &$variables) {
+function base_ui_preprocess_menu_local_task(array &$variables)
+{
   //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
 }
 
 /**
  * Implements hook_preprocess_menu_local_task().
  */
-function base_ui_preprocess_page_title(array &$variables) {
+function base_ui_preprocess_page_title(array &$variables)
+{
   $path = \Drupal::service('path.current')->getPath();
   $array = explode('/', $path);
-  if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    // Modify page title on node edit pages.
-    if (
-      (isset($array[1]) && isset($array[2]) && isset($array[3]))
-    &&
-      ($array[1] == 'node' && is_numeric((int) $array[2]) && $array[3] == 'edit')
-    ) {
-      $title = $variables['title'];
-      $bundle_label = \Drupal::entityTypeManager()
-        ->getStorage('node_type')
-        ->load($node->bundle())
-        ->label();
-      $variables['title'] = 'Edit ' . $bundle_label;
-    }
-  }
+  // if ($node = \Drupal::routeMatch()->getParameter('node')) {
+  //   // Modify page title on node edit pages.
+  //   if ((isset($array[1]) && isset($array[2]) && isset($array[3]))
+  //     && ($array[1] == 'node' && is_numeric((int)$array[2]) && $array[3] == 'edit')) {
+  //     $title = $variables['title'];
+  //     $bundle_label = \Drupal::entityTypeManager()
+  //       ->getStorage('node_type')
+  //       ->load($node->bundle())
+  //       ->label();
+  //     $variables['title'] = 'Edit ' . $bundle_label;
+  //   }
+  // }
 
 }

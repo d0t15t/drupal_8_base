@@ -3,7 +3,6 @@ base-theme:
   css:
     layout:
       css/styles.css: {}
-    theme:
   js:
     js/scripts.js: {}
   dependencies:

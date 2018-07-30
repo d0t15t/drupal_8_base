@@ -102,6 +102,7 @@ html.with-featherlight
 	top: 0;
 	right: 0;
 	opacity 0
+	outline none
 
 	/* dimensions: 25px x 25px */
 	line-height: 25px;
@@ -116,7 +117,15 @@ html.with-featherlight
 	color: #000;
 	border: none;
 	padding: 0;
+	transition all 500ms
 }
+
+.featherlight .featherlight-content:hover {
+	button.featherlight-close-icon {
+		opacity 1
+	}
+}
+
 
 /* See http://stackoverflow.com/questions/16077341/how-to-reset-all-default-styles-of-the-html5-button-element */
 .featherlight .featherlight-close-icon::-moz-focus-inner {
