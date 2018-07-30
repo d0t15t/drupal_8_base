@@ -9,6 +9,11 @@ composer install
 (add to devdesktop)
 
 drush si
+db_name isaacbigsbytrogdon_com
+user drupaluser
+pw
+host 127.0.0.1
+port 33067
 
 drush upwd admin password
 
